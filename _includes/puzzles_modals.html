@@ -1,0 +1,53 @@
+<!-- Puzzles Modals -->
+{% for post in site.posts_puzzles %}
+    <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ post.title }}</h2>
+                            <hr class="graphic-color-group-2">
+                            <img src="img/puzzles/{{ post.img }}-scrambled.png" class="img-responsive img-centered" alt="{{ post.title }}">
+                            {% if post.description %}
+                                <p>{{ post.description }}</p>
+                            {% endif %}
+                            <ul class="list-inline item-details">
+                                {% if post.youtube-link %}
+                                    <li>Video:
+                                        <strong><a href="{{ post.youtube-link }}" target="_blank">Youtube</a>
+                                        </strong>
+                                    </li>
+                                {% endif %}
+                                {% if post.tp-museum-link or post.tp-forum-link %}
+                                    <li>More info:
+                                        {% if post.tp-museum-link %}<strong><a href="{{ post.tp-museum-link }}" target="_blank">Museum</a></strong>{% endif %}{% if post.tp-museum-link %}{% if post.tp-forum-link %},{% endif %}{% endif %}
+                                        {% if post.tp-forum-link %}<strong><a href="{{ post.tp-forum-link }}" target="_blank">Forum</a></strong>{% endif %}
+                                    </li>
+                                {% endif %}
+                                {% if post.purchase-link %}
+                                    <li>Purchase:
+                                        <strong><a href="{{ post.purchase-link }}" target="_blank">{{ post.purchase-service }}</a>
+                                        </strong>
+                                    </li>
+                                {% else %}
+                                    <li>Purchase:
+                                        <strong><a href="mailto:sales@ganets.ky?subject = Request to purchase your {{ post.title }}" target="_blank">Request to purchase</a>
+                                        </strong>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

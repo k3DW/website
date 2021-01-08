@@ -1,11 +1,14 @@
 # Site settings
-title: Freelancer
-email: your-email@domain.com
-url: https://github.com/jeromelachaud/freelancer-theme
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-keywords: "your keywords, separated by commas"
-skills: "Web Developer - Graphic Artist - User Experience Designer"
-meta_author: LastName FirstName
+title: Braden Ganetsky
+email: braden.ganetsky@gmail.com
+url: https://ganets.ky
+description: "Personal website for Braden Ganetsky."
+keywords: "braden, ganetsky, university of manitoba, uofm, u of m, umes, university of manitoba engineering society, engineering society, eitc, price, faculty, twisty, puzzle, twistypuzzle, tp, rubik, rubik's, cube, 3d, print, printing, geometry, shape, shapes, design, designs"
+skills: "Puzzler Designer · Programmer · Enthusiast at Large"
+#skills: "Enthusiast at large" 
+#skills: "Puzzle Designer - 3D Printing Enthusiast - Programmer"
+meta_author: Braden Ganetsky
+have_xml_feed: false
 
 # Google webmaster tools
 google_verify:
@@ -17,7 +20,7 @@ bing_verify:
 # - static : pass through formspree.io to validate email sending
 # - disqus : replace contact form by disqus thread
 # - comment the line below if you want to stick with the default PHP contact form
-contact: static
+#contact: static
 
 # If you use disqus you need disqus shortname
 # https://help.disqus.com/customer/portal/articles/466208
@@ -25,30 +28,46 @@ disqus_shortname: myshortname
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 18bc9c #80B3FF
-  primary-rgb: "24,288,156" #"128,179,255"
-  secondary: 2c3e50 #FD6E8A
-  secondary-dark: 233140 #A2122F
+  primary: 696969 #80B3FF
+  primary-rgb: "105,105,105" #"128,179,255"
+  secondary: 303030 #FD6E8A
+  secondary-rgb: "48,48,48"
+  secondary-dark: 202020 #A2122F
+
+header:
+  color-group: color-group-1
+section_about:
+  full_title: About Me
+  short_title: About
+  color-group: color-group-2
+section_puzzles:
+  full_title: Twisty Puzzles
+  short_title: Puzzles
+  color-group: color-group-2
+section_programming: 
+  full_title: Programming Projects
+  short_title: Programming
+  color-group: color-group-2
+section_contact:
+  full_title: Contact Me
+  short_title: Contact
+  color-group: color-group-1
 
 # Footer settings
 footer:
-  copyright: Dr. Henry Jekyll
+  copyright: Braden Ganetsky
   location: Location
   social: Around the Web
   credits: Credits
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: twitter
-    url: http://twitter.com/jekyllrb
-  - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket
-    url: http://bitbucket.org/jekyll
+  - title: linkedin
+    url: https://www.linkedin.com/in/braden-ganetsky/
+  - title: youtube
+    url: https://www.youtube.com/channel/UChw89wQvTMTMOaoLEY-kXsQ
   - title: github
-    url: http://github.com/jekyll
+    url: https://github.com/k3DW
 
 # Postal address (add as many lines as necessary)
 address:
@@ -69,3 +88,9 @@ defaults:
       type: "posts"
     values:
       permalink: ""
+
+collections:
+  posts_puzzles:
+    output: true
+  posts_programming:
+    output: true

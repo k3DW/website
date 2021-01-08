@@ -1,22 +1,23 @@
+---
+title: TEST :)
+---
 <!DOCTYPE html>
 <html>
     {% include head.html %}
     <body id="page-top" class="index">
     {% include nav.html %}
     {% include header.html %}
-    {% include portfolio_grid.html %}
+
     {% include about.html %}
 
-    {% if site.contact == "static" %}
-    {% include contact_static.html %}
-    {% elsif site.contact == "disqus" %}
-    {% include contact_disqus.html %}
-    {% else %}
+    {% include puzzles_grid.html %}
+    {% include programming_grid.html %}
+    
     {% include contact.html %}
-    {% endif %}
 
     {% include footer.html %}
-    {% include modals.html %}
+    {% include puzzles_modals.html %}
+    {% include programming_modals.html %}
     {% include js.html %}
     </body>
 </html>

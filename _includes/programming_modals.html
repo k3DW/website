@@ -1,0 +1,59 @@
+<!-- Portfolio Modals -->
+{% for post in site.posts_programming %}
+    <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ post.title }}</h2>
+                            <hr class="graphic-color-group-2">
+                            <img src="img/programming/{{ post.img }}-full.png" class="img-responsive img-centered" alt="{{ post.alt }}">
+                            {% if post.description %}
+                                <p>{{ post.description }}</p>
+                            {% endif %}
+                            <ul class="list-inline item-details">
+                                {% if post.youtube-link == "none" %}
+                                {% elsif post.youtube-link %}
+                                    <li>Video:
+                                        <strong><a href="{{ post.youtube-link }}" target="_blank">Youtube</a>
+                                        </strong>
+                                    </li>
+                                {% else %}
+                                    <li>Video:
+                                        <strong>TBA
+                                        </strong>
+                                    </li>
+                                {% endif %}
+                                {% if post.source-location %}
+                                    <li>Source:
+                                        <strong><a href="{{ post.source-link }}" target="_blank">{{ post.source-location }}</a>
+                                        </strong>
+                                    </li>
+                                {% else %}
+                                    <li>Source:
+                                        <strong>Closed
+                                        </strong>
+                                    </li>
+                                {% endif %}
+                                {% if post.version %}
+                                    <li>Version:
+                                        <strong>{{ post.version }}
+                                        </strong>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

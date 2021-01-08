@@ -9,7 +9,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top">{{ site.title }}</a>
+                
+                 
+                <a class="navbar-brand" href="#page-top">
+                    <img src="/img/k3DW.png" width="24" height="24">
+                    {{ site.title }}
+                </a> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,13 +24,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="#about">{{ site.section_about.short_title }}</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a href="#puzzles">{{ site.section_puzzles.short_title }}</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a href="#programming">{{ site.section_programming.short_title }}</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">{{ site.section_contact.short_title }}</a>
                     </li>
                 </ul>
             </div>

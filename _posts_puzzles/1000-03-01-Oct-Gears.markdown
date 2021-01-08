@@ -1,0 +1,14 @@
+---
+layout: default
+modal-id: 1003
+img: octgears
+title: Oct Gears
+
+youtube-link: https://www.youtube.com/watch?v=95iZK4yOW-4
+#tp-museum-link: 
+tp-forum-link: http://twistypuzzles.com/forum/viewtopic.php?f=18&t=31905
+#purchase-service: 
+#purchase-link: 
+
+description: The Oct Gears is not actually a puzzle, but it's a lot of fun to play with. This was an exercise in designing conical gears patterned around a sphere completely from scratch. It's basically an expensive fidget toy.
+---
