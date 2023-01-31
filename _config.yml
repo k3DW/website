@@ -25,9 +25,9 @@ section_puzzles:
   full_title: Twisty Puzzles
   short_title: Puzzles
   color-group: color-group-2
-section_programming: 
-  full_title: Programming Projects
-  short_title: Programming
+section_software: 
+  full_title: Software Projects
+  short_title: Software
   color-group: color-group-2
 section_contact:
   full_title: Contact Me
@@ -60,5 +60,5 @@ permalink: pretty
 collections:
   posts_puzzles:
     output: true
-  posts_programming:
+  posts_software:
     output: true
