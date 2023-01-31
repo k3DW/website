@@ -1,30 +1,11 @@
 # Site settings
 title: Braden Ganetsky
-email: braden.ganetsky@gmail.com
-url: https://ganets.ky
+url: https://ganets.ky/
 description: "Personal website for Braden Ganetsky."
-keywords: "braden, ganetsky, university of manitoba, uofm, u of m, umes, university of manitoba engineering society, engineering society, eitc, price, faculty, twisty, puzzle, twistypuzzle, tp, rubik, rubik's, cube, 3d, print, printing, geometry, shape, shapes, design, designs"
-skills: "Puzzler Designer · Programmer · Enthusiast at Large"
-#skills: "Enthusiast at large" 
-#skills: "Puzzle Designer - 3D Printing Enthusiast - Programmer"
+keywords: "braden, ganetsky, twisty, puzzle, twistypuzzle, tp, rubik, rubik's, cube, 3d, print, printing, geometry, shape, shapes, design, designs, code, c, c++, programming, software, develop, development"
+skills: "Puzzler Designer · Software Developer · Enthusiast at Large"
 meta_author: Braden Ganetsky
 have_xml_feed: false
-
-# Google webmaster tools
-google_verify:
-
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
-
-# Contact form:
-# - static : pass through formspree.io to validate email sending
-# - disqus : replace contact form by disqus thread
-# - comment the line below if you want to stick with the default PHP contact form
-#contact: static
-
-# If you use disqus you need disqus shortname
-# https://help.disqus.com/customer/portal/articles/466208
-disqus_shortname: myshortname
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
@@ -65,14 +46,9 @@ social:
   - title: linkedin
     url: https://www.linkedin.com/in/braden-ganetsky/
   - title: youtube
-    url: https://www.youtube.com/channel/UChw89wQvTMTMOaoLEY-kXsQ
+    url: https://www.youtube.com/@k3DW/
   - title: github
-    url: https://github.com/k3DW
-
-# Postal address (add as many lines as necessary)
-address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+    url: https://github.com/k3DW/
 
 # Credits content
 credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
@@ -80,14 +56,6 @@ credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a
 # Build settings
 markdown: kramdown
 permalink: pretty
-
-#for posts
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      permalink: ""
 
 collections:
   posts_puzzles:
