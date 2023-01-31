@@ -7,8 +7,8 @@ title: CaTSuP
 youtube-link: https://www.youtube.com/watch?v=MZGPSIeGvc4
 tp-museum-link: https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=6056
 tp-forum-link: https://twistypuzzles.com/forum/viewtopic.php?f=15&t=31487
-purchase-service: Chewbacca
-purchase-link: http://chewiescustomstickers.com/catsup.html
+purchase-service: Chewie's Custom Puzzles
+purchase-link: https://www.chewiescustompuzzles.com/puzzleshop/p/catsup
 
 description: The <a href="https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=6056" target="_blank">CaTSuP</a> is the first ever <b>c</b>orner-<b>t</b>urning <b>s</b>quare <b>p</b>yramid, which is where the name comes from. Arguably, this puzzle only has 12 pieces that can be scrambed, but it's <b>very</b> difficult to solve, if you're up for the challenge.
 ---

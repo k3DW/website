@@ -8,7 +8,7 @@ youtube-link: https://www.youtube.com/watch?v=n0Yv9XaDVM8
 tp-museum-link: https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=6963
 tp-forum-link: https://twistypuzzles.com/forum/viewtopic.php?f=15&t=33551
 purchase-service: Grigorusha
-purchase-link: https://www.etsy.com/listing/710791881/
+purchase-link: https://www.grigorusha.com/braden-puzzles-2/persistence-of-mastery-pom4-by-braden-ganetsky
 
 description: The <a href="https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=6963" target="_blank">Persistence of Mastery</a> (aka "POM4") is the result of doing an <a href="https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=1598" target="_blank">axis</a> transformation on a <a href="https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=1693" target="_blank">Crazy 4x4x4 II</a>. After only a few turns, the shape gets extremely confusing, and the solve experience is anything but straightforward!
 ---

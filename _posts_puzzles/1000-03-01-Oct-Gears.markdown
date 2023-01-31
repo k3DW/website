@@ -10,5 +10,5 @@ tp-forum-link: http://twistypuzzles.com/forum/viewtopic.php?f=18&t=31905
 #purchase-service: 
 #purchase-link: 
 
-description: The Oct Gears is not actually a puzzle, but it's a lot of fun to play with. This was an exercise in designing conical gears patterned around a sphere completely from scratch. It's basically an expensive fidget toy.
+description: The Oct Gears is not actually a puzzle, but it's a lot of fun to play with. This was an exercise in designing conical gears patterned around a sphere completely from scratch. It's a more expensive fidget toy.
 ---
