@@ -5,9 +5,9 @@ img: curves.h
 title: Curves.h
 
 youtube-link: none
-source-location: PDF
+source-location: Working on it
 source-link: posts_programming/Curves.h.pdf
 version: 1.0
 
-description: After my puzzle simulator in Pygame, I started working on my new puzzle simulator in C++. I wanted to mathematically represent a sticker's non-polygonal edge as its true intended shape instead of storing it as a long list of very small straight lines. I wrote this paper as documentation for the code for <b>Curves.h</b>, which is the header where these non-polygonal curves are defined.<br><br>The header may change compared to the code in the PDF, but the math is the same. This is the first step in making my vision of this simulator into a reality!
+description: After my puzzle simulator in Pygame, I started working on my new puzzle simulator in C++. I wanted to mathematically represent a sticker's non-polygonal edge as its true intended shape instead of storing it as a long list of very small straight lines. I wrote this paper to document the math on how to parametrize these curves uniformly.<br><br>This is the first step in making my vision of this simulator into a reality!
 ---
