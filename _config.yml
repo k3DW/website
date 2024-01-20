@@ -3,7 +3,7 @@ title: Braden Ganetsky
 url: https://ganets.ky/
 description: "Personal website for Braden Ganetsky."
 keywords: "braden, ganetsky, twisty, puzzle, twistypuzzle, tp, rubik, rubik's, cube, 3d, print, printing, geometry, shape, shapes, design, designs, code, c, c++, programming, software, develop, development"
-skills: "Puzzler Designer · Software Developer · Enthusiast at Large"
+skills: "Puzzler Designer · Software Developer · Public Speaker"
 meta_author: Braden Ganetsky
 have_xml_feed: false
 
@@ -24,6 +24,10 @@ section_about:
 section_puzzles:
   full_title: Twisty Puzzles
   short_title: Puzzles
+  color-group: color-group-2
+section_speaking: 
+  full_title: Speaking
+  short_title: Speaking
   color-group: color-group-2
 section_software: 
   full_title: Software Projects
@@ -59,6 +63,8 @@ permalink: pretty
 
 collections:
   posts_puzzles:
+    output: true
+  posts_speaking:
     output: true
   posts_software:
     output: true

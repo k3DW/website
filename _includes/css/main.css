@@ -234,12 +234,14 @@ section h2 {
 }
 
 #puzzles .portfolio-item,
+#speaking .portfolio-item,
 #software .portfolio-item {
     right: 0;
     margin: 0 0 15px;
 }
 
 #puzzles .portfolio-item .portfolio-link,
+#speaking .portfolio-item .portfolio-link,
 #software .portfolio-item .portfolio-link {
     display: block;
     position: relative;
@@ -248,6 +250,7 @@ section h2 {
 }
 
 #puzzles .portfolio-item .portfolio-link .caption,
+#speaking .portfolio-item .portfolio-link .caption,
 #software .portfolio-item .portfolio-link .caption {
     position: absolute;
     width: 100%;
@@ -262,11 +265,13 @@ section h2 {
 }
 
 #puzzles .portfolio-item .portfolio-link .caption:hover,
+#speaking .portfolio-item .portfolio-link .caption:hover,
 #software .portfolio-item .portfolio-link .caption:hover {
     opacity: 1;
 }
 
 #puzzles .portfolio-item .portfolio-link .caption .caption-content,
+#speaking .portfolio-item .portfolio-link .caption .caption-content,
 #software .portfolio-item .portfolio-link .caption .caption-content {
     position: absolute;
     top: 50%;
@@ -278,24 +283,29 @@ section h2 {
 }
 
 #puzzles .portfolio-item .portfolio-link .caption .caption-content i,
+#speaking .portfolio-item .portfolio-link .caption .caption-content i,
 #software .portfolio-item .portfolio-link .caption .caption-content i {
     margin-top: -12px;
 }
 
 #puzzles .portfolio-item .portfolio-link .caption .caption-content h3,
 #puzzles .portfolio-item .portfolio-link .caption .caption-content h4,
+#speaking .portfolio-item .portfolio-link .caption .caption-content h3,
+#speaking .portfolio-item .portfolio-link .caption .caption-content h4,
 #software .portfolio-item .portfolio-link .caption .caption-content h3,
 #software .portfolio-item .portfolio-link .caption .caption-content h4 {
     margin: 0;
 }
 
 #puzzles *,
+#speaking *,
 #software * {
     z-index: 2;
 }
 
 @media(min-width:767px) {
     #puzzles .portfolio-item,
+    #speaking .portfolio-item,
     #software .portfolio-item {
         margin: 0 0 30px;
     }

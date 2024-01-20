@@ -1,0 +1,26 @@
+
+    <!-- Speaking Grid Section -->
+    <section class="{{ site.section_speaking.color-group }}" id="speaking">
+        <div class="container portfolio-flex-grid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>{{ site.section_speaking.full_title }}</h2>
+                    <hr class="graphic-{{ site.section_speaking.color-group }}">
+                </div>
+            </div>
+            <div class="portfolio-flex-row">
+                {% for post in site.posts_speaking %}
+                    <div class="portfolio-flex-item portfolio-item">
+                        <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fas fa-comment fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/speaking/{{ post.img }}-thumbnail.png" class="img-responsive" alt="{{ post.title }}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
