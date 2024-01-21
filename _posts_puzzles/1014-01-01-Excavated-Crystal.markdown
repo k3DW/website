@@ -5,7 +5,7 @@ img: excavatedcrystal
 title: Excavated Crystal
 
 youtube-link: https://www.youtube.com/watch?v=kLhOAXTu-fc
-#tp-museum-link: https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=10684
+tp-museum-link: https://twistypuzzles.com/cgi-bin/puzzle.cgi?pkey=11632
 tp-forum-link: https://twistypuzzles.com/forum/viewtopic.php?t=39111
 #purchase-service: 
 #purchase-link: 
