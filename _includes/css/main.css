@@ -7,6 +7,8 @@
 .color-group-1 {
     color: #ffffff;
     background: #{{ site.color.primary }};
+    background-image: url('img/k3DW-background-dark.png');
+    background-position: center;
 }
 
 #color-group-1 {
