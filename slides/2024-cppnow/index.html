@@ -10,14 +10,14 @@ layout: blank
 
 		<title>Braden Ganetsky C++Now 2024</title>
 
-		<link rel="icon" href="./images/^Profile Picture.png">
+		<link rel="icon" href="../!resources/images/^Profile Picture.png">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/custom-white.css">
+		<link rel="stylesheet" href="../!resources/dist/reset.css">
+		<link rel="stylesheet" href="../!resources/dist/reveal.css">
+		<link rel="stylesheet" href="../!resources/dist/theme/custom-white.css">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/vs.css">
+		<link rel="stylesheet" href="../!resources/plugin/highlight/vs.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -30,7 +30,7 @@ layout: blank
 
 				<!-- #region Intro -->
 
-				<section full data-background-image="./images/thumbnails/cppnow_2024_title_card.png" no-footer>
+				<section full data-background-image="./thumbnails/cppnow_2024_title_card.png" no-footer>
 				</section>
 
 				<section full data-background-color="#FFFFFF" no-footer change-footer="Introduction">
@@ -50,7 +50,7 @@ layout: blank
 								<div style="flex: 1 1 auto;"></div>
 								<div style="display: flex; flex-flow: row; flex: 0 1 auto;">
 									<div style="flex: 1 1 auto;"></div>
-									<img src="./images/^Profile Picture.png"></img>
+									<img src="../!resources/images/^Profile Picture.png"></img>
 								</div>
 								<div style="flex: 3 1 auto;"></div>
 							</div>
@@ -72,7 +72,7 @@ layout: blank
 						* Canadian
 						* Mechanical engineering degree
 						* I like twisty puzzles
-						![test](./images/NEP7570939.jpg) <!-- .element style="position:absolute; height:75%; right:0; top:12%;"-->
+						![test](../!resources/images/NEP7570939.jpg) <!-- .element style="position:absolute; height:75%; right:0; top:12%;"-->
 						* Working in C++ for 3 years
 						* On WG21 since late 2023
 						* Importantly for this talk, parsing!
@@ -81,7 +81,7 @@ layout: blank
 
 				<section my-columns>
 					<div>
-						<img src="./images/thumbnails/constexpr-all-the-things.jpg" width="50%" />
+						<img src="./thumbnails/constexpr-all-the-things.jpg" width="50%" />
 						<br/>
 						"constexpr ALL the things!"
 						<br/>
@@ -92,21 +92,21 @@ layout: blank
 				<section my-columns>
 					<h2>Unit testing</h2>
 					<div class="fragment">
-						<img src="./images/screenshots/components_1.png" width="100%" />
+						<img src="./screenshots/components_1.png" width="100%" />
 					</div>
 				</section>
 
 				<section my-columns>
 					<h2>Unit testing</h2>
 					<div>
-						<img src="./images/screenshots/components_2.png" width="100%" />
+						<img src="./screenshots/components_2.png" width="100%" />
 					</div>
 				</section>
 
 				<section my-columns>
 					<h2>Unit testing</h2>
 					<div>
-						<img src="./images/screenshots/components_3.png" width="100%" />
+						<img src="./screenshots/components_3.png" width="100%" />
 					</div>
 				</section>
 
@@ -714,7 +714,7 @@ layout: blank
 					</div>
 					
 					<div style="width:100%;">
-						<img src="./images/screenshots/json_parse_result.png" />
+						<img src="./screenshots/json_parse_result.png" />
 					</div>
 				</section>
 
@@ -3387,10 +3387,10 @@ layout: blank
 			</div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
+		<script src="../!resources/dist/reveal.js"></script>
+		<script src="../!resources/plugin/notes/notes.js"></script>
+		<script src="../!resources/plugin/markdown/markdown.js"></script>
+		<script src="../!resources/plugin/highlight/highlight.js"></script>
 		<script>
 			for (listItem of document.querySelectorAll("section")) {
 				if (listItem.hasAttribute("data-background-image"))
@@ -3399,7 +3399,7 @@ layout: blank
 					continue;
 				if (listItem.hasAttribute("signpost"))
 					continue;
-				listItem.setAttribute("data-background-image", "./images/background/logo-with-binary-3840-2160.png")
+				listItem.setAttribute("data-background-image", "../!resources/images/background/logo-with-binary-3840-2160.png")
 			}
 
 			for (const listItem of document.querySelectorAll("section[signpost]")) {
