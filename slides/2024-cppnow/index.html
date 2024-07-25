@@ -23,11 +23,6 @@ layout: blank
 		<div class="reveal">
 			<div class="slides">
 
-				<script>
-					_footerTitle = "Compile-time unit testing"
-					_footer = "Footer";
-				</script>
-
 				<!-- #region Intro -->
 
 				<section full data-background-image="./thumbnails/cppnow_2024_title_card.png" no-footer>
@@ -3387,113 +3382,27 @@ layout: blank
 			</div>
 		</div>
 
-		<script src="../!resources/dist/reveal.js"></script>
-		<script src="../!resources/plugin/notes/notes.js"></script>
-		<script src="../!resources/plugin/markdown/markdown.js"></script>
-		<script src="../!resources/plugin/highlight/highlight.js"></script>
+		<script async src="../!resources/my-js.js" type="module"></script>
+
 		<script>
-			for (listItem of document.querySelectorAll("section")) {
-				if (listItem.hasAttribute("data-background-image"))
-					continue;
-				if (listItem.hasAttribute("data-background-color"))
-					continue;
-				if (listItem.hasAttribute("signpost"))
-					continue;
-				listItem.setAttribute("data-background-image", "../!resources/images/background/logo-with-binary-3840-2160.png")
-			}
+		const initObject = {
+			scripts : [
+				"../!resources/dist/reveal.js",
+				"../!resources/plugin/notes/notes.js",
+				"../!resources/plugin/markdown/markdown.js",
+				"../!resources/plugin/highlight/highlight.js",
+			],
+			width : 1280,
+			height : 720,
+			backgroundImage : "../!resources/images/background/logo-with-binary-3840-2160.png",
+			leftSideFooter : "Compile-time unit testing",
+			rightSideFooter : "Braden Ganetsky - CppNow 2024",
+			useSubFooter : true,
+		};
 
-			for (const listItem of document.querySelectorAll("section[signpost]")) {
-				listItem.classList.add("center");
-				listItem.setAttribute("data-background-color", "#FFFFFF");
-			}
+		(async () => {
 
-			const _width = 1280;
-			const _height = 720;
-			for (const listItem of document.querySelectorAll("section[full]")) {
-				listItem.setAttribute("style", `height:${_height}px; width:${_width}px;`);
-			}
-			for (const listItem of document.querySelectorAll("section.list-fade-in-then-semi-out")) {
-				listItem.setAttribute("style", `height:${_height}px; width:${_width}px;`);
-			}
-
-			for (const slide of document.querySelectorAll("section[my-columns]")) {
-				slide.setAttribute("style", `height:${_height}px; width:${_width}px;`);
-				
-				mainDiv = document.createElement('DIV');
-				mainDiv.setAttribute("style", "display: flex; flex-flow: column; height: 100%;");
-				
-				if (slide.children[0].tagName == 'H2') {
-					h2 = slide.children[0];
-					slide.removeChild(h2);
-					mainDiv.appendChild(h2);
-					h2.setAttribute("style", "flex: 0 1 auto;");
-				} else {
-					beginDiv = document.createElement('DIV');
-					beginDiv.setAttribute("style", `flex: 0 1 0;`);
-					mainDiv.appendChild(beginDiv);
-				}
-				
-				widths = [];
-				attr = slide.getAttribute("my-columns");
-				if (attr) {
-					widths = attr.split(" ");
-					console.assert(widths.length == slide.childElementCount);
-				} else {
-					for (let i = 0; i != slide.childElementCount; i++) {
-						widths.push("auto");
-					}
-				}
-
-				slide.appendChild(mainDiv);
-
-				middleDiv = document.createElement('DIV');
-				middleDiv.setAttribute("style", "flex: 1 1 auto; display:flex; flex-flow: row;");
-				mainDiv.appendChild(middleDiv);
-				endDiv = document.createElement('DIV');
-				endDiv.setAttribute("style", `flex: 0 1 0;`);
-				mainDiv.appendChild(endDiv);
-
-				leftDiv = document.createElement('DIV');
-				leftDiv.setAttribute("style", `flex: 1 1 auto;`);
-				middleDiv.appendChild(leftDiv);
-				while (slide.children.length > 1) {
-					column = slide.children[0];
-					slide.removeChild(column);
-
-					if (column.tagName == 'PRE' && column.classList.length == 0) {
-						column.classList.add("cpp");
-					}
-					
-					innerDiv = document.createElement('DIV');
-					innerDiv.setAttribute("style", `flex: 1 1 ${widths[0]}; display:flex; align-items: center; text-align: center;`);
-					widths.shift();
-					innerDiv.appendChild(column);
-					middleDiv.appendChild(innerDiv);
-				}
-				rightDiv = document.createElement('DIV');
-				rightDiv.setAttribute("style", `flex: 1 1 auto;`);
-				middleDiv.appendChild(rightDiv);
-			}
-
-			for (item of document.querySelectorAll('[my-hori-center]')) {
-				item.removeAttribute('my-hori-center');
-
-				newDiv = document.createElement('DIV');
-				newDiv.setAttribute("style", "display:flex; flex-flow:row;");
-				item.replaceWith(newDiv);
-
-				leftDiv = document.createElement('DIV');
-				leftDiv.setAttribute("style", "flex: 1 1 auto;");
-				
-				rightDiv = document.createElement('DIV');
-				rightDiv.setAttribute("style", "flex: 1 1 auto;");
-
-				newDiv.appendChild(leftDiv);
-				newDiv.appendChild(item);
-				newDiv.appendChild(rightDiv);
-			}
-
-
+			await k3DW.preInitSlides(initObject);
 
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -3501,8 +3410,8 @@ layout: blank
 			Reveal.initialize({
 				hash: true,
 
-				width: _width,
-				height: _height,
+				width: initObject.width,
+				height: initObject.height,
 
 				margin: 0.1,
 
@@ -3528,50 +3437,10 @@ layout: blank
 			});
 
 			Reveal.on("ready", () => {
-				for (const listItem of document.querySelectorAll(".reveal section.list-fade-in-then-semi-out li")) {
-					listItem.classList.add("fragment", "fade-in-then-semi-out");
-				}
-				for (const listItem of document.querySelectorAll(".reveal section.list-fade-in-then-semi-out p")) {
-					listItem.classList.add("fragment", "fade-in-then-semi-out");
-				}
-				for (const listItem of document.querySelectorAll(".reveal section .list-fade-in-then-semi-out li")) {
-					listItem.classList.add("fragment", "fade-in-then-semi-out");
-				}
-				for (const listItem of document.querySelectorAll(".reveal section .list-fade-in-then-semi-out p")) {
-					listItem.classList.add("fragment", "fade-in-then-semi-out");
-				}
-
-				for (slide of document.querySelectorAll("section")) {
-					if (slide.hasAttribute('change-footer')) {
-						_footer = slide.getAttribute('change-footer');
-					}
-					if (slide.hasAttribute('no-footer') || slide.hasAttribute('signpost')) {
-						continue;
-					}
-
-					moveVert = 20;
-
-					leftFooterDiv = document.createElement('DIV');
-					leftFooterDiv.setAttribute("style", `font-size:40%; color:#999; position:absolute; bottom:-${moveVert}px; left:-45px;`);
-					slide.appendChild(leftFooterDiv);
-					
-					rightFooterDiv = document.createElement('DIV');
-					rightFooterDiv.setAttribute("style", `font-size:40%; color:#999; position:absolute; bottom:-${moveVert}px; right:30px;`);
-					slide.appendChild(rightFooterDiv);
-					
-					leftFooterDiv.innerText = `${_footerTitle} - ${_footer}`;
-					rightFooterDiv.innerText = `Braden Ganetsky - C++Now 2024`;
-				}
+				k3DW.postInitSlides(initObject);
 			});
 
-			// https://www.raymondcamden.com/2012/10/20/Adding-mouse-click-navigation-to-revealjs
-			window.addEventListener("mousedown", handleClick, false);
-			window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
-			function handleClick(e) {
-				e.preventDefault();
-				if(e.button === 0) Reveal.next(); 
-				if(e.button === 2) Reveal.prev(); 
-			}
+		})();
 		</script>
 	</body>
 </html>
