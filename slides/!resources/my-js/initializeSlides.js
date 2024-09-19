@@ -121,11 +121,12 @@ export function setFooters(leftSideText, rightSideText, useSubFooter) {
     let subFooter = "Footer"; // Mutated in the loop below
 
     document.querySelectorAll("section").forEach(slide => {
-        if (slide.hasAttribute('no-footer') || slide.hasAttribute('signpost')) {
-            return;
-        }
+        // The order of these 2 `if` statements is important
         if (slide.hasAttribute('change-footer')) {
             subFooter = slide.getAttribute('change-footer');
+        }
+        if (slide.hasAttribute('no-footer') || slide.hasAttribute('signpost')) {
+            return;
         }
 
         const moveVert = 20;
