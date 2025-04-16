@@ -2,9 +2,11 @@ import * as init from "./my-js/initializeSlides.js"
 import { loadScripts } from "./my-js/loadScripts.js";
 import { addMouseClickNavigation } from "./my-js/mouseClick.js";
 import { substituteIncludes } from "./my-js/substituteIncludes.js";
+import { substituteLists } from "./my-js/substituteLists.js"
 
 export async function preInitSlides(object) {
     await substituteIncludes();
+    substituteLists();
     await loadScripts(object.scripts);
 
     init.setBackground(object.backgroundImage);
