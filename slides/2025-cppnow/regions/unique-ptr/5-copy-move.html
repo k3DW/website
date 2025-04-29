@@ -7,6 +7,8 @@
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             p2 = p1;
+        </script></code></pre>
+        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             // error: object of type '(lambda at /path/to/unique_ptr.hpp:58:9)' cannot
             // be assigned because its copy assignment operator is implicitly deleted
             //    66 |     p2 = p1; // Deleted function operator=
@@ -38,18 +40,18 @@
 <section my-columns>
     <h2>Copy and move</h2>
     <div style="width:100%;">
-        <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers="4-10|4-5|6|7-9|4-10"><script type="text/template">
+        <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers="4-10|4-6|7-9|4-10"><script type="text/template">
             using Impl = decltype(overloaded(
                 // ...
 
-                []<non_const Self>(Self& self, tag_operator_assign, T*,
+                []<non_const Self>(Self& self, operator_assign_tag, T*,
                     Self&& other) static noexcept
                 -> Self& {
-                    auto other_ptr = other(tag_memfn_release{});
-                    self(tag_memfn_reset{}, other_ptr);
+                    auto other_ptr = other(release_memfn_tag{});
+                    self(reset_memfn_tag{}, other_ptr);
                     return self;
                 },
-                
+
                 // ...
             ));
         </script></code></pre>
@@ -64,10 +66,10 @@
             auto p2 = unique_ptr<int>(nullptr);
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            p2(tag_operator_assign{}, move(p1));
+            p2(operator_assign_tag{}, move(p1));
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            // p2(tag_operator_assign{}, p1); // Long template error
+            // p2(operator_assign_tag{}, p1); // Long template error
         </script></code></pre>
         <div class="fragment" style="position:absolute; top:10%; left:27%; font-size:1000%;">
             ✔️
@@ -115,7 +117,7 @@
                     // Deleted
                 },
                 [](unique_ptr_t<T>&& other) static {
-                    return unique_ptr_impl<T>(other(tag_memfn_release{}));
+                    return unique_ptr_impl<T>(other(release_memfn_tag{}));
                 },
                 // ...
             );
@@ -307,7 +309,7 @@
     <h2>Copy and move</h2>
     <div style="width:100%;">
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            using tag_factory = decltype([]{});
+            using factory_tag = decltype([]{});
         </script></code></pre>
     </div>
 </section>
@@ -321,7 +323,7 @@
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers="2-6"><script type="text/template">
             // Inside `unique_ptr_impl<T>`
-            [](auto&& self, tag_factory, T*)
+            [](auto&& self, factory_tag, T*)
                 -> decltype(auto(unique_ptr_factory<decltype(self), T>))
             {
                 return {};
@@ -361,7 +363,7 @@
     <div style="width:100%;">
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             auto f = [](auto p) {
-                return g(p(tag_factory{})(move(p)));
+                return g(p(factory_tag{})(move(p)));
             };
         </script></code></pre>
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
@@ -379,7 +381,7 @@
     <div style="width:100%;">
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             auto f = [](auto p) {
-                return g(decltype(p(tag_factory{})){}(move(p)));
+                return g(decltype(p(factory_tag{})){}(move(p)));
             };
         </script></code></pre>
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">

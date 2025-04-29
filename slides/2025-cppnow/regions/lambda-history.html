@@ -285,7 +285,7 @@
                 (f(Idxs, args), ...);
             }
             void enumerate_pack(auto f, auto... args) {
-                enumerate_pack_impl(std::make_index_sequence, f, args...);
+                enumerate_pack_impl(std::make_index_sequence<sizeof...(args)>{}, f, args...);
             }
         </script></code></pre>
     </div>
@@ -295,7 +295,7 @@
     <textarea data-template>
         ## Lambdas in C++23
         * Attributes on the call operator
-        * Parameter-less in all cases
+        * Drop empty parens in all cases
         * `static` call operator
         * Explicit object parameter
     </textarea>

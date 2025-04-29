@@ -85,13 +85,13 @@
     <h2>Member functions</h2>
     <div style="width:100%;">
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            using tag_memfn_get = decltype([]{});
-            using tag_memfn_... = decltype([]{});
+            using get_memfn_tag = decltype([]{});
+            using ..._memfn_tag = decltype([]{});
             // ...
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            using tag_operator_bool = decltype([]{});
-            using tag_operator_star = decltype([]{});
+            using operator_bool_tag = decltype([]{});
+            using operator_star_tag = decltype([]{});
             // ...
         </script></code></pre>
     </div>
@@ -125,7 +125,7 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     }
                 ));
@@ -146,12 +146,12 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     }
 
 
-                    
+
                 ));
                 return
                     [_ptr = ptr]<class Tag, class... Args>
@@ -170,10 +170,10 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -200,10 +200,10 @@
             const auto p = unique_ptr_impl<int>(&x);
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            assert(p(tag_operator_bool{}));
+            assert(p(operator_bool_tag{}));
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            assert(*p(tag_memfn_get{}) == 5);
+            assert(*p(get_memfn_tag{}) == 5);
         </script></code></pre>
     </div>
 </section>
@@ -219,11 +219,11 @@
 
 
 
-                
-                    [](tag_memfn_get, T* ptr) static noexcept -> T* {
+
+                    [](get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -244,15 +244,15 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](tag_memfn_release, T*& ptr) static noexcept -> T* {
+                    [](release_memfn_tag, T*& ptr) static noexcept -> T* {
                         auto temp = ptr;
                         ptr = nullptr;
                         return temp;
                     },
-                    [](tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -274,13 +274,13 @@
             const auto p = unique_ptr_impl<int>(&x);
         </script></code></pre>
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            assert(p(tag_operator_bool{}));
+            assert(p(operator_bool_tag{}));
         </script></code></pre>
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            assert(*p(tag_memfn_get{}) == 5);
+            assert(*p(get_memfn_tag{}) == 5);
         </script></code></pre>
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
-            p(tag_memfn_release{}); // Compile error
+            p(release_memfn_tag{}); // Compile error
         </script></code></pre>
     </div>
 </section>
@@ -292,15 +292,15 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](tag_memfn_release, T*& ptr) static noexcept -> T* {
+                    [](release_memfn_tag, T*& ptr) static noexcept -> T* {
                         auto temp = ptr;
                         ptr = nullptr;
                         return temp;
                     },
-                    [](tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -321,15 +321,15 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](tag_memfn_release, T*& ptr) static noexcept -> T* {
+                    [](release_memfn_tag, T*& ptr) static noexcept -> T* {
                         auto temp = ptr;
                         ptr = nullptr;
                         return temp;
                     },
-                    [](tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -350,15 +350,15 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](auto&&, tag_memfn_release, T*& ptr) static noexcept -> T* {
+                    [](auto&&, release_memfn_tag, T*& ptr) static noexcept -> T* {
                         auto temp = ptr;
                         ptr = nullptr;
                         return temp;
                     },
-                    [](auto&&, tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](auto&&, get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](auto&&, tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](auto&&, operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -389,15 +389,15 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](auto&&, tag_memfn_release, T*& ptr) static noexcept -> T* {
+                    [](auto&&, release_memfn_tag, T*& ptr) static noexcept -> T* {
                         auto temp = ptr;
                         ptr = nullptr;
                         return temp;
                     },
-                    [](auto&&, tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](auto&&, get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](auto&&, tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](auto&&, operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -418,15 +418,15 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](non_const auto&&, tag_memfn_release, T*& ptr) static noexcept -> T* {
+                    [](non_const auto&&, release_memfn_tag, T*& ptr) static noexcept -> T* {
                         auto temp = ptr;
                         ptr = nullptr;
                         return temp;
                     },
-                    [](auto&&, tag_memfn_get, T* ptr) static noexcept -> T* {
+                    [](auto&&, get_memfn_tag, T* ptr) static noexcept -> T* {
                         return ptr;
                     },
-                    [](auto&&, tag_operator_bool, T* ptr) static noexcept -> bool {
+                    [](auto&&, operator_bool_tag, T* ptr) static noexcept -> bool {
                         return ptr != nullptr;
                     }
                 ));
@@ -447,7 +447,7 @@
             using Impl = decltype(overloaded(
                 // ...
 
-                [](non_const auto&&, tag_memfn_reset, T*& ptr,
+                [](non_const auto&&, reset_memfn_tag, T*& ptr,
                     T* new_ptr = nullptr) static noexcept
                 -> void {
                     auto old_ptr = ptr;
@@ -470,16 +470,16 @@
             using Impl = decltype(overloaded(
                 // ...
 
-                [](auto&&, tag_operator_star, T* ptr)
-                    static noexcept(noexcept(*declval<T*>())) 
+                [](auto&&, operator_star_tag, T* ptr)
+                    static noexcept(noexcept(*declval<T*>()))
                 -> T& {
                     return *ptr;
                 },
 
-                [](auto&&, tag_operator_arrow, T* ptr) static noexcept -> T* {
+                [](auto&&, operator_arrow_tag, T* ptr) static noexcept -> T* {
                     return ptr;
                 }
-                
+
                 // ...
             ));
         </script></code></pre>
@@ -493,15 +493,15 @@
             using Impl = decltype(overloaded(
                 // ...
 
-                []<non_const Self>(Self&, tag_memfn_swap, T*& ptr,
+                []<non_const Self>(Self&, swap_memfn_tag, T*& ptr,
                     Self& other) static noexcept
                 -> void {
-                    auto other_ptr = other(tag_memfn_release{});
-                    other(tag_memfn_reset{}, ptr);
+                    auto other_ptr = other(release_memfn_tag{});
+                    other(reset_memfn_tag{}, ptr);
                     ptr = other_ptr;
                 },
 
-                
+
 
                 // ...
             ));
@@ -516,7 +516,7 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](auto&&, tag_xyz, data_members, args...) static {
+                    [](auto&&, xyz_tag, data_members, args...) static {
                         // ...
                     },
                     // ...
@@ -538,7 +538,7 @@
             template <class T>
             constexpr auto unique_ptr_impl = [](T* ptr) static {
                 using Impl = decltype(overloaded(
-                    [](auto&&, tag_xyz, data_members, args...) static {
+                    [](auto&&, xyz_tag, data_members, args...) static {
                         // ...
                     },
                     // ...

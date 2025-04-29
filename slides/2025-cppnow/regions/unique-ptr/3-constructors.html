@@ -36,6 +36,8 @@
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             auto p1 = unique_ptr_impl<int>();
             auto p2 = unique_ptr_impl<int>(nullptr);
+        </script></code></pre>
+        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             static_assert(not is_same_v<decltype(p1), decltype(p2)>); // !!
         </script></code></pre>
         <div class="fragment" style="position:absolute; top:10%; left:27%; font-size:1000%;">
@@ -130,6 +132,8 @@
         <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             auto p1 = unique_ptr<int>();
             auto p2 = unique_ptr<int>(nullptr);
+        </script></code></pre>
+        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             static_assert(is_same_v<decltype(p1), decltype(p2)>);
         </script></code></pre>
         <div class="fragment" style="position:absolute; top:10%; left:27%; font-size:1000%;">

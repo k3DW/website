@@ -72,6 +72,7 @@ layout: blank
 						![test](../!resources/images/NEP7570939.jpg) <!-- .element style="position:absolute; height:75%; right:0; top:12%;"-->
 						* Working in C++ for 4 years
 						* On WG21 since 2023
+						* Run Winnipeg C++ Developers
 					</textarea>
 				</section>
 
@@ -128,9 +129,11 @@ layout: blank
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
 						## This talk is
-						* A scientific experiment
-						* A fun challenge
-						* A warning (the stdlib is huge)
+						* A thought experiment
+						* Scientific
+						* A fun challenge, testing limits of lambdas
+						* A 90-minute lightning talk
+						* _Full of code you should not write!_
 					</textarea>
 				</section>
 
@@ -241,6 +244,7 @@ layout: blank
 						* `tuple` - equality operator
 						* Reusable storage
 						* Range-based for loop
+						* Declaration and TUs
 						* `main` function
 					</textarea>
 				</section>
@@ -250,6 +254,7 @@ layout: blank
 				<include src="./regions/more-features/2-tuple-equality-op.html"></include>
 				<include src="./regions/more-features/3-reusable-storage.html"></include>
 				<include src="./regions/more-features/4-range-for.html"></include>
+				<include src="./regions/more-features/4.5-translation-units.html"></include>
 				<include src="./regions/more-features/5-main.html"></include>
 
 				<!-- #endregion More features -->
@@ -287,29 +292,22 @@ layout: blank
 					<li class="fragment fade-in-then-semi-out" style="font-size:80%;">No directly extendable overload sets</li>
 					<li class="fragment fade-in-then-semi-out" style="font-size:80%;">No operator overloading</li>
 					<li class="fragment fade-in-then-semi-out" style="font-size:80%;">No array captures</li>
+					<li class="fragment fade-in-then-semi-out" style="font-size:80%;">No separating declaration and definition</li>
+					<li class="fragment fade-in-then-semi-out" style="font-size:80%;">No linking across TUs</li>
 				</section>
-				
-				<section data-markdown class="list-fade-in-then-semi-out">
-					<textarea data-template>
-						## Additionally
-						* No separating lambda declaration and definition
-						* Therefore, headers only
-						* Cannot link across TUs
-					</textarea>
-				</section>
-				
+
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
 						## Unavoidable rule breaks
 						* Struct template `type_identity` before C++26
 						* Struct `no_copy`
-						* Class template `dtor_wrapper`
+						* Struct template `dtor_wrapper`
 						* Union template `variadic_union`
 						* `main` function in hosted environment
 						* ... others?
 					</textarea>
 				</section>
-				
+
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
 						## Takeaways
@@ -318,6 +316,7 @@ layout: blank
 						* Lambdas can replace most classes and functions
 						* But not all
 						* The standard library is _huge_
+						* Play around with code!
 					</textarea>
 				</section>
 
@@ -325,7 +324,7 @@ layout: blank
 
 
 
-				<include src="../!resources/slides/thank-you/1.html"></include>
+				<include src="./regions/thank-you.html"></include>
 			</div>
 		</div>
 
@@ -354,6 +353,7 @@ layout: blank
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				slideNumber: true,
 				hash: true,
 
 				width: initObject.width,
@@ -363,7 +363,7 @@ layout: blank
 
 				controls: false,
 				progress: false,
-				
+
 				overview: true,
 
 				center: false,

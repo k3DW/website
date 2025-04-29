@@ -14,7 +14,7 @@
 </section>
 
 <section my-columns>
-    <h2><code>type_identity</code></h2>				
+    <h2><code>type_identity</code></h2>
     <div style="width:100%;">
         <div>From cppreference</div>
         <br/>
@@ -34,7 +34,7 @@
 </section>
 
 <section my-columns>
-    <h2><code>type_identity</code></h2>				
+    <h2><code>type_identity</code></h2>
     <div style="width:100%;">
         <div>From cppreference</div>
         <br/>
@@ -108,7 +108,7 @@
 </section>
 
 <section my-columns>
-    <h2><code>type_identity</code></h2>				
+    <h2><code>type_identity</code></h2>
     <div style="width:100%;">
         <div>From cppreference</div>
         <br/>
@@ -175,7 +175,7 @@
             template <class T>
             using type_identity_t =
                 decltype(type_identity_f<T>());
-            
+
             template <class T>
             using type_identity =
                 decltype(auto(type_identity_f<T>));
@@ -189,7 +189,7 @@
             template <class T>
             using type_identity_t =
                 T;
-            
+
             template <class T>
             using type_identity =
                 ???;
@@ -225,7 +225,7 @@
         In C++26, with P2996
         <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
             template <class T>
-            using type_identity = decltype([]() static -> std::meta::info {
+            using type_identity = decltype([]() static {
                 return ^^T;
             });
         </script></code></pre>
@@ -234,7 +234,7 @@
             using type_identity_t = typename [: type_identity<T>{}() :];
         </script></code></pre>
         <span class="">
-            https://godbolt.org/z/6dvhffeMW
+            https://godbolt.org/z/MG7n8rqMo
         </span>
     </div>
 </section>
