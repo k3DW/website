@@ -26,20 +26,21 @@
 
 <section data-markdown class="list-fade-in-then-semi-out">
     <textarea data-template>
+        ## General mechanism
+        * Context of overload resolution, possible candidate functions
+        * List of viable candidate functions
+        * From the viable list, find the "best" one
+    </textarea>
+</section>
+
+<section data-markdown class="list-fade-in-then-semi-out">
+    <textarea data-template>
         ## Distinct contexts of overload resolution
         * Function calls
         * Object `operator()`
         * Operator overloading
         * Constructors
         * Conversion functions
-    </textarea>
-</section>
-
-<section data-markdown class="list-fade-in-then-semi-out">
-    <textarea data-template>
-        ## General mechanism
-        * List of viable candidate functions
-        * From the viable list, find the "best" one
     </textarea>
 </section>
 
@@ -59,7 +60,7 @@
 <section data-markdown class="list-fade-in-then-semi-out">
     <textarea data-template>
         ## Find the best candidate function
-        * "Implicit conversion sequence" for each argument
+        * "Implicit conversion sequence" for each parameter-argument pair
         * Rank the viable candidates based on conversions
     </textarea>
 </section>

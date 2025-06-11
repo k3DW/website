@@ -10,14 +10,14 @@ layout: blank
 
 		<title>Braden Ganetsky C++ on Sea 2025</title>
 
-		<link rel="icon" href="../!resources/images/^Profile Picture.png">
+		<link rel="icon" href="../../!resources/images/^Profile Picture.png">
 
-		<link rel="stylesheet" href="../!resources/dist/reset.css">
-		<link rel="stylesheet" href="../!resources/dist/reveal.css">
-		<link rel="stylesheet" href="../!resources/dist/theme/custom-white.css">
+		<link rel="stylesheet" href="../../!resources/dist/reset.css">
+		<link rel="stylesheet" href="../../!resources/dist/reveal.css">
+		<link rel="stylesheet" href="../../!resources/dist/theme/custom-white.css">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="../!resources/plugin/highlight/vs.css">
+		<link rel="stylesheet" href="../../!resources/plugin/highlight/vs.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -25,7 +25,10 @@ layout: blank
 
 				<!-- #region Intro -->
 
-				<section full data-background-color="#FFFFFF" no-footer change-footer="Introduction">
+				<section full data-background-image="./img/The Pattern Matching We Already Have_Title Card copy.png" no-footer change-footer="Introduction">
+				</section>
+
+				<!-- <section full data-background-color="#FFFFFF" no-footer change-footer="Introduction">
 					<div style="display: flex; flex-flow: column; height: 100%;">
 
 						<div style="flex: 0 1 75%; display: flex; flex-flow: row;">
@@ -41,7 +44,7 @@ layout: blank
 								<div style="flex: 1 1 auto;"></div>
 								<div style="display: flex; flex-flow: row; flex: 0 1 auto;">
 									<div style="flex: 1 1 auto;"></div>
-									<img src="../!resources/images/^Profile Picture.png"></img>
+									<img src="../../!resources/images/^Profile Picture.png"></img>
 								</div>
 								<div style="flex: 3 1 auto;"></div>
 							</div>
@@ -55,7 +58,9 @@ layout: blank
 						</div>
 
 					</div>
-				</section>
+				</section> -->
+
+				<include src="./regions/intro.html"></include>
 
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
@@ -63,14 +68,12 @@ layout: blank
 						* Canadian
 						* Mechanical engineering degree
 						* I like twisty puzzles
-						![test](../!resources/images/NEP7570939.jpg) <!-- .element style="position:absolute; height:75%; right:0; top:12%;"-->
+						![test](../../!resources/images/NEP7570939.jpg) <!-- .element style="position:absolute; height:75%; right:0; top:12%;"-->
 						* Working in C++ for 4 years
 						* On WG21 since 2023
 						* Run Winnipeg C++ Developers
 					</textarea>
 				</section>
-
-				<include src="./regions/intro.html"></include>
 
 				<!-- #endregion Intro -->
 
@@ -136,8 +139,8 @@ layout: blank
 						* The general rules can be quite elegant
 						* ...but the edge cases can get gnarly
 						* Analogue reasoning about your code is a muscle
+						* Get curious, exercise that muscle
 						* Appreciate how far C++ has come
-						* Get curious
 					</textarea>
 				</section>
 
@@ -145,22 +148,22 @@ layout: blank
 
 
 
-				<include src="../!resources/slides/thank-you/1.html"></include>
+				<include src="../../!resources/slides/thank-you/1.html"></include>
 			</div>
 		</div>
 
 		<script type="module">
-		import * as k3DW from "../!resources/my-js.js";
+		import * as k3DW from "../../!resources/my-js.js";
 		const initObject = {
 			scripts : [
-				"../!resources/dist/reveal.js",
-				"../!resources/plugin/notes/notes.js",
-				"../!resources/plugin/markdown/markdown.js",
-				"../!resources/plugin/highlight/highlight.js",
+				"../../!resources/dist/reveal.js",
+				"../../!resources/plugin/notes/notes.js",
+				"../../!resources/plugin/markdown/markdown.js",
+				"../../!resources/plugin/highlight/highlight.js",
 			],
 			width : 1280,
 			height : 720,
-			backgroundImage : "../!resources/images/background/logo-with-binary-3840-2160.png",
+			backgroundImage : "../../!resources/images/background/logo-with-binary-3840-2160.png",
 			leftSideFooter : "Pattern Matching",
 			rightSideFooter : "Braden Ganetsky - C++ on Sea 2025",
 			useSubFooter : true,

@@ -3,10 +3,9 @@
         ## General mechanism
         * Create a theoretical set of function templates, the "guides"
         * One for each constructor
-        * If no constructors, one for a hypothetical default constructor
-        * One for a hypothetical copy constructor
         * One for each deduction guide*
         * Then do overload resolution and template argument deduction
+        * The winning function's return type is chosen
     </textarea>
 </section>
 
@@ -21,11 +20,11 @@
                 MyStruct(T, std::pair<U, V>);
             };
         </script></code></pre>
-        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
+        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers="|1|2|"><script type="text/template">
             template <class T, class U>
             MyStruct<T, U> __imaginary_function(std::vector<T>, U);
         </script></code></pre>
-        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
+        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers="|1|2|"><script type="text/template">
             template <class T, class U, class V>
             MyStruct<T, U> __imaginary_function(T, std::pair<U, V>);
         </script></code></pre>
@@ -61,7 +60,8 @@
             template <class T, class U, class V>
             MyStruct<T, U> __imaginary_function(T, std::pair<U, V>);
         </script></code></pre>
-        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
+        <br/>
+        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers="|1|2|3|4|"><script type="text/template">
             std::vector<int> vec;
             std::pair<char, double> p;
             MyStruct s{ vec, p };
@@ -82,7 +82,7 @@
                 MyStruct(T, std::pair<U, V>);
             };
         </script></code></pre>
-        <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
+        <pre class="cpp"><code data-trim hide-line-numbers data-line-numbers="|1|2|"><script type="text/template">
             template <class T, class U, class A>
             MyStruct<T, U> __imaginary_function(std::vector<T, A>, U);
         </script></code></pre>
@@ -90,7 +90,7 @@
             template <class T, class U, class V>
             MyStruct<T, U> __imaginary_function(T, std::pair<U, V>);
         </script></code></pre>
-        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
+        <pre class="cpp fragment"><code data-trim hide-line-numbers data-line-numbers="|4"><script type="text/template">
             std::vector<int> vec;
             std::pair<char, double> p;
             MyStruct s{ vec, p };
