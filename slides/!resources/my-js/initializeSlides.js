@@ -95,7 +95,11 @@ export function setColumns() {
         mainDiv.appendChild(endDiv);
 
         let leftDiv = document.createElement('DIV');
-        leftDiv.setAttribute("style", `flex: 1 1 auto;`);
+        if (slide.getAttribute("my-columns-align") == 'left') {
+            leftDiv.setAttribute("style", `flex: 0 1 auto;`);
+        } else {
+            leftDiv.setAttribute("style", `flex: 1 1 auto;`);
+        }
         middleDiv.appendChild(leftDiv);
         while (slide.children.length > 1) {
             let column = slide.children[0];
@@ -106,7 +110,11 @@ export function setColumns() {
             }
             
             let innerDiv = document.createElement('DIV');
-            innerDiv.setAttribute("style", `flex: 1 1 ${widths[0]}; display:flex; align-items: center; text-align: center;`);
+            if (slide.getAttribute("my-columns-align") == 'left') {
+                innerDiv.setAttribute("style", `flex: 1 1 ${widths[0]}; display:flex; align-items: top; text-align: left;`);
+            } else {
+                innerDiv.setAttribute("style", `flex: 1 1 ${widths[0]}; display:flex; align-items: center; text-align: center;`);
+            }
             widths.shift();
             innerDiv.appendChild(column);
             middleDiv.appendChild(innerDiv);

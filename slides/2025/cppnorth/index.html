@@ -1,0 +1,206 @@
+---
+layout: blank
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Braden Ganetsky C++ North 2025</title>
+
+        <link rel="icon" href="../../!resources/images/^Profile Picture.png">
+
+        <link rel="stylesheet" href="../../!resources/dist/reset.css">
+        <link rel="stylesheet" href="../../!resources/dist/reveal.css">
+        <link rel="stylesheet" href="../../!resources/dist/theme/custom-white.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="../../!resources/plugin/highlight/vs.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <!-- #region Intro -->
+
+				<section full data-background-image="./img/27.png" no-footer change-footer="Introduction">
+				</section>
+
+                <!-- <section full data-background-color="#FFFFFF" no-footer change-footer="Introduction">
+                    <div style="display: flex; flex-flow: column; height: 100%;">
+
+                        <div style="flex: 0 1 75%; display: flex; flex-flow: row;">
+                            <div style="font-size:200%; display: flex; flex-flow: column; flex: 0 1 auto;">
+                                <div style="flex: 1 1 auto;"></div>
+                                <div                          >Debugger</div>
+                                <div style="margin-top:-10px;">Visualizers to</div>
+                                <div style="margin-top:-10px;">Make Your Code</div>
+                                <div style="margin-top:-10px;">Accessible</div>
+                                <div style="flex: 1 1 auto;"></div>
+                                <div style="flex: 0 1 0.5em;"></div>
+                            </div>
+                            <div style="flex: 50 1 auto;"></div>
+                            <div style="display: flex; flex-flow: column; flex: 0 1 36%;">
+                                <div style="flex: 1 1 auto;"></div>
+                                <div style="display: flex; flex-flow: row; flex: 0 1 auto;">
+                                    <div style="flex: 1 1 auto;"></div>
+                                    <img src="../../!resources/images/^Profile Picture.png"></img>
+                                </div>
+                                <div style="flex: 3 1 auto;"></div>
+                            </div>
+                            <div style="flex: 1 1 auto;"></div>
+                        </div>
+
+                        <div style="flex: 1 1 auto; padding:1.8% 3% 2% 3%; background-color: #DDDDDD; display: flex; flex-flow: column;">
+                            <div style="font-size:125%; ">Braden Ganetsky</div>
+                            <div style="flex: 1 1 auto;"></div>
+                            <div style="font-size:100%; ">C++ North 2025</div>
+                        </div>
+
+                    </div>
+                </section> -->
+
+                <section my-columns>
+                    <div>
+                        <img src="./img/stop-teaching-c.jpg" width="50%" />
+                        <br/>
+                        "Stop Teaching C"
+                        <br/>
+                        <a href="https://www.youtube.com/watch?v=YnWhqhNdYyk" style="font-size: 50%;">https://www.youtube.com/watch?v=YnWhqhNdYyk</a>
+                    </div>
+                </section>
+
+                <include src="./regions/intro.html"></include>
+
+                <!-- #endregion Intro -->
+
+                <section data-markdown signpost change-footer="Natvis setup">
+                    Natvis setup
+                </section>
+
+                <include src="./regions/1-setup-natvis.html"></include>
+
+                <section data-markdown signpost change-footer="Writing Natvis">
+                    Writing Natvis
+                </section>
+
+                <include src="./regions/2-write-natvis.html"></include>
+
+                <section data-markdown signpost change-footer="GDB pretty-printer setup">
+                    GDB pretty-printer setup
+                </section>
+
+                <include src="./regions/3-setup-gdb.html"></include>
+
+                <section data-markdown signpost change-footer="Writing GDB pretty-printers">
+                    Writing GDB pretty-printers
+                </section>
+
+                <include src="./regions/4-write-gdb.html"></include>
+
+
+
+                <!-- #region Conclusion -->
+
+                <section signpost change-footer="Conclusion">
+                    Conclusion
+                </section>
+
+                <section data-markdown class="list-fade-in-then-semi-out">
+                    <textarea data-template>
+                        ## Write visualizers
+                        * Now you know how!
+                        * Colleagues will thank you
+                        * Your future self will thank you
+                    </textarea>
+                </section>
+
+                <section data-markdown class="list-fade-in-then-semi-out">
+                    <textarea data-template>
+                        ## Ultimately I want
+                        * Developer empowerment
+                        * Removal of barriers to understanding
+                        * Libraries that are more accessible to use
+                    </textarea>
+                </section>
+
+                <section data-markdown class="list-fade-in-then-semi-out">
+                    <textarea data-template>
+                        ## Takeaways
+                        * Our work is about more than just the source code
+                        * Let's make our code more accessible
+                    </textarea>
+                </section>
+
+                <!-- #endregion Conclusion -->
+
+
+
+                <include src="../../!resources/slides/thank-you/1.html"></include>
+            </div>
+        </div>
+
+        <script type="module">
+        import * as k3DW from "../../!resources/my-js.js";
+        const initObject = {
+            scripts : [
+                "../../!resources/dist/reveal.js",
+                "../../!resources/plugin/notes/notes.js",
+                "../../!resources/plugin/markdown/markdown.js",
+                "../../!resources/plugin/highlight/highlight.js",
+            ],
+            width : 1280,
+            height : 720,
+            backgroundImage : "../../!resources/images/background/logo-with-binary-3840-2160.png",
+            leftSideFooter : "Debugger Visualizers",
+            rightSideFooter : "Braden Ganetsky - C++ North 2025",
+            useSubFooter : true,
+        };
+
+        (async () => {
+
+            await k3DW.preInitSlides(initObject);
+
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                slideNumber: true,
+                hash: true,
+
+                width: initObject.width,
+                height: initObject.height,
+
+                margin: 0.1,
+
+                controls: false,
+                progress: false,
+
+                overview: true,
+
+                center: false,
+
+                help: false,
+                pause: false,
+
+                transition: 'none',
+                backgroundTransition: 'none',
+
+                pdfSeparateFragments: false,
+
+                //autoAnimateDuration: 0,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+
+            Reveal.on("ready", () => {
+                k3DW.postInitSlides(initObject);
+            });
+
+        })();
+        </script>
+    </body>
+</html>
