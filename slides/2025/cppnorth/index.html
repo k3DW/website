@@ -28,40 +28,6 @@ layout: blank
 				<section full data-background-image="./img/27.png" no-footer change-footer="Introduction">
 				</section>
 
-                <!-- <section full data-background-color="#FFFFFF" no-footer change-footer="Introduction">
-                    <div style="display: flex; flex-flow: column; height: 100%;">
-
-                        <div style="flex: 0 1 75%; display: flex; flex-flow: row;">
-                            <div style="font-size:200%; display: flex; flex-flow: column; flex: 0 1 auto;">
-                                <div style="flex: 1 1 auto;"></div>
-                                <div                          >Debugger</div>
-                                <div style="margin-top:-10px;">Visualizers to</div>
-                                <div style="margin-top:-10px;">Make Your Code</div>
-                                <div style="margin-top:-10px;">Accessible</div>
-                                <div style="flex: 1 1 auto;"></div>
-                                <div style="flex: 0 1 0.5em;"></div>
-                            </div>
-                            <div style="flex: 50 1 auto;"></div>
-                            <div style="display: flex; flex-flow: column; flex: 0 1 36%;">
-                                <div style="flex: 1 1 auto;"></div>
-                                <div style="display: flex; flex-flow: row; flex: 0 1 auto;">
-                                    <div style="flex: 1 1 auto;"></div>
-                                    <img src="../../!resources/images/^Profile Picture.png"></img>
-                                </div>
-                                <div style="flex: 3 1 auto;"></div>
-                            </div>
-                            <div style="flex: 1 1 auto;"></div>
-                        </div>
-
-                        <div style="flex: 1 1 auto; padding:1.8% 3% 2% 3%; background-color: #DDDDDD; display: flex; flex-flow: column;">
-                            <div style="font-size:125%; ">Braden Ganetsky</div>
-                            <div style="flex: 1 1 auto;"></div>
-                            <div style="font-size:100%; ">C++ North 2025</div>
-                        </div>
-
-                    </div>
-                </section> -->
-
                 <section my-columns>
                     <div>
                         <img src="./img/stop-teaching-c.jpg" width="50%" />
@@ -73,6 +39,19 @@ layout: blank
                 </section>
 
                 <include src="./regions/intro.html"></include>
+
+                <section data-markdown class="list-fade-in-then-semi-out">
+                    <textarea data-template>
+                        ## About me
+                        * Canadian
+                        * Mechanical engineering degree
+                        * I like twisty puzzles
+                        ![test](../../!resources/images/NEP7570939.jpg) <!-- .element style="position:absolute; height:75%; right:0; top:12%;"-->
+                        * C++ standards committee (WG21)
+                        * Winnipeg C++ Developers meet up group
+                        * CppNorth volunteer coordinator
+                    </textarea>
+                </section>
 
                 <!-- #endregion Intro -->
 
@@ -112,6 +91,7 @@ layout: blank
                     <textarea data-template>
                         ## Write visualizers
                         * Now you know how!
+                        * Writing a visualizer is accessible to you!
                         * Colleagues will thank you
                         * Your future self will thank you
                     </textarea>
@@ -123,15 +103,20 @@ layout: blank
                         * Developer empowerment
                         * Removal of barriers to understanding
                         * Libraries that are more accessible to use
+                        * Widely consumed libraries to have debugger support
                     </textarea>
                 </section>
 
-                <section data-markdown class="list-fade-in-then-semi-out">
-                    <textarea data-template>
-                        ## Takeaways
-                        * Our work is about more than just the source code
-                        * Let's make our code more accessible
-                    </textarea>
+                <section my-columns>
+                    <div style="width:100%;">
+                        <span>Our work is about more than the source code</span>
+                        <br/>
+                        <br/>
+                        <span class="fragment">Our work is about people</span>
+                        <br/>
+                        <br/>
+                        <span class="fragment">Let's make our code more accessible</span>
+                    </div>
                 </section>
 
                 <!-- #endregion Conclusion -->
