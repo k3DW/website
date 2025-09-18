@@ -6,6 +6,7 @@ layout: blank
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="refresh" content="0; URL=/slides/2025/cppcon/">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>Braden Ganetsky C++Now 2024</title>
@@ -187,7 +188,7 @@ layout: blank
 				</section>
 
 				<!-- #region Basic usage -->
-				
+
 				<section my-columns="50%">
 					<h2>Basic usage</h2>
 					<div style="width:100%;">
@@ -204,7 +205,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="50%">
 					<h2>Basic usage</h2>
 					<div style="width:100%;">
@@ -221,7 +222,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="50%">
 					<h2>Basic usage</h2>
 					<div style="width:100%;">
@@ -357,7 +358,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<!-- #endregion Basic usage -->
 
 				<!-- #region Modifiers -->
@@ -500,7 +501,7 @@ layout: blank
 					<div style="width:100%;">
 						<pre class="cpp"><code data-trim hide-line-numbers data-line-numbers="1|3-5,10|7-9|"><script type="text/template">
 							enum class TokenKind { ident, num, lbrace, ... };
-							
+
 							class Token {
 								TokenKind kind;
 								... // other members
@@ -551,13 +552,13 @@ layout: blank
 							struct result_type;
 							static consteval auto get_parser();
 						};
-						
+
 						struct JsonObject : Custom<JsonObject>
 						{
 							using result_type = std::vector<std::tuple<std::string, JsonValue::result_type>>;
 							static consteval auto get_parser();
 						};
-						
+
 						struct JsonArray : Custom<JsonArray>
 						{
 							using result_type = std::vector<JsonValue::result_type>;
@@ -566,7 +567,7 @@ layout: blank
 
 						struct JsonValue::result_type
 						{
-							using variant_t = std::variant<std::string, number_type, JsonObject::result_type, 
+							using variant_t = std::variant<std::string, number_type, JsonObject::result_type,
 							                               JsonArray::result_type, bool, nullptr_t>;
 							variant_t variant;
 						};
@@ -600,13 +601,13 @@ layout: blank
 							struct result_type;
 							static consteval auto get_parser();
 						};
-						
+
 						struct JsonObject : Custom<JsonObject>
 						{
 							using result_type = std::vector<std::tuple<std::string, JsonValue::result_type>>;
 							static consteval auto get_parser();
 						};
-						
+
 						struct JsonArray : Custom<JsonArray>
 						{
 							using result_type = std::vector<JsonValue::result_type>;
@@ -615,7 +616,7 @@ layout: blank
 
 						struct JsonValue::result_type
 						{
-							using variant_t = std::variant<std::string, number_type, JsonObject::result_type, 
+							using variant_t = std::variant<std::string, number_type, JsonObject::result_type,
 							                               JsonArray::result_type, bool, nullptr_t>;
 							variant_t variant;
 						};
@@ -643,13 +644,13 @@ layout: blank
 							struct result_type;
 							static consteval auto get_parser();
 						};
-						
+
 						struct JsonObject : Custom<JsonObject>
 						{
 							using result_type = std::vector<std::tuple<std::string, JsonValue::result_type>>;
 							static consteval auto get_parser();
 						};
-						
+
 						struct JsonArray : Custom<JsonArray>
 						{
 							using result_type = std::vector<JsonValue::result_type>;
@@ -658,7 +659,7 @@ layout: blank
 
 						struct JsonValue::result_type
 						{
-							using variant_t = std::variant<std::string, number_type, JsonObject::result_type, 
+							using variant_t = std::variant<std::string, number_type, JsonObject::result_type,
 							                               JsonArray::result_type, bool, nullptr_t>;
 							variant_t variant;
 						};
@@ -703,11 +704,11 @@ layout: blank
 									]
 								}
 							}})-";
-							
+
 							auto result = JsonObject::parse(input);
 						</script></code></pre>
 					</div>
-					
+
 					<div style="width:100%;">
 						<img src="./screenshots/json_parse_result.png" />
 					</div>
@@ -784,7 +785,7 @@ layout: blank
 							TEST(ISO8601, parse_result)
 							{
 								auto result = parser.parse("2024-01-01");
-								
+
 								ASSERT_TRUE(result.has_value());
 								EXPECT_EQ(*result, std::tuple("2024", "01", "01"));
 							}
@@ -796,7 +797,7 @@ layout: blank
 							[ RUN      ] ISO8601.parse_result
 							[       OK ] ISO8601.parse_result (0 ms)
 							[----------] 1 test from ISO8601 (0 ms total)
-							
+
 							[----------] Global test environment tear-down
 							[==========] 1 test from 1 test suite ran. (1 ms total)
 							[  PASSED  ] 1 test.
@@ -815,10 +816,10 @@ layout: blank
 							path\to\main.cpp(17): error: Value of: result.has_value()
 							  Actual: false
 							Expected: true
-							
+
 							[  FAILED  ] ISO8601.parse_result (0 ms)
 							[----------] 1 test from ISO8601 (1 ms total)
-							
+
 							[----------] Global test environment tear-down
 							[==========] 1 test from 1 test suite ran. (5110 ms total)
 							[  PASSED  ] 0 tests.
@@ -838,7 +839,7 @@ layout: blank
 							{
 
 								auto result = parser.parse("bad");
-								
+
 								ASSERT_TRUE(result.has_value());
 
 
@@ -856,7 +857,7 @@ layout: blank
 							{
 								std::string_view input = "bad";
 								auto result = parser.parse(input);
-								
+
 								ASSERT_TRUE(result.has_value());
 
 
@@ -904,7 +905,7 @@ layout: blank
 								Ignore<AllOf<"-">>,
 								Join<Exactly<AnyOf<"0123456789">,2>>
 							>
-							
+
 							[...]
 						</script></code></pre>
 					</div>
@@ -946,7 +947,7 @@ layout: blank
 							path\to\main.cpp(18): error: Value of: result.has_value()
 							  Actual: false
 							Expected: true
-							
+
 							[...]
 						</script></code></pre>
 					</div>
@@ -972,7 +973,7 @@ layout: blank
 								Ignore<AllOf<"-">>,
 								Join<Exactly<AnyOf<"012345678">,2>>
 							>
-							
+
 							[...]
 						</script></code></pre>
 						<div class="fragment" style="position:absolute; top:10%; left:27%; font-size:1000%;">
@@ -1052,7 +1053,7 @@ layout: blank
 							{
 								std::string_view input = "bad";
 								auto result = parser.parse(input);
-								
+
 								BOOST_REQUIRE_MESSAGE(result.has_value(),
 									std::format("\nInput could not be parsed.\nInput = \"{}\"\n"
 									"Parser = {}", input, k3::tok3n::pretty(parser).view()));
@@ -1119,7 +1120,7 @@ layout: blank
 							{
 								std::string_view input = "2024-01-01";
 								auto result = parser.parse(input);
-						
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1140,7 +1141,7 @@ layout: blank
 							{
 								std::string_view input = "bad";
 								auto result = parser.parse(input);
-						
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1152,7 +1153,7 @@ layout: blank
 							  REQUIRE( result.has_value() )
 							with expansion:
 							  false
-							
+
 							===============================================================================
 							test cases: 1 | 1 failed
 							assertions: 1 | 1 failed
@@ -1171,7 +1172,7 @@ layout: blank
 
 								INFO(std::format("Input could not be parsed.\nInput = \"{}\"\n"
 									"Parser = {}", input, k3::tok3n::pretty(parser).view()));
-						
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1199,7 +1200,7 @@ layout: blank
 									Ignore<AllOf<"-">>,
 									Join<Exactly<AnyOf<"0123456789">,2>>
 								>
-							
+
 							===============================================================================
 							test cases: 1 | 1 failed
 							assertions: 1 | 1 failed
@@ -1227,7 +1228,7 @@ layout: blank
 									Ignore<AllOf<"-">>,
 									Join<Exactly<AnyOf<"012345678">,2>>
 								>
-							
+
 							===============================================================================
 							test cases: 1 | 1 failed
 							assertions: 1 | 1 failed
@@ -1239,7 +1240,7 @@ layout: blank
 				</section>
 
 				<!-- #endregion Run-time testing with Catch2 -->
-				
+
 				<!-- #region Run-time testing with doctest -->
 
 				<section my-columns="90%">
@@ -1250,7 +1251,7 @@ layout: blank
 							{
 								std::string_view input = "2024-01-01";
 								auto result = parser.parse(input);
-							
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1274,7 +1275,7 @@ layout: blank
 							{
 								std::string_view input = "bad";
 								auto result = parser.parse(input);
-						
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1284,10 +1285,10 @@ layout: blank
 							===============================================================================
 							\main.cpp(25):
 							TEST CASE:  ISO8601
-							
+
 							\main.cpp(33): FATAL ERROR: REQUIRE( result.has_value() ) is NOT correct!
 							  values: REQUIRE( false )
-							
+
 							===============================================================================
 							[...]
 						</script></code></pre>
@@ -1305,7 +1306,7 @@ layout: blank
 
 								INFO(std::format("Input could not be parsed.\nInput = \"{}\"\n"
 									"Parser = {}", input, k3::tok3n::pretty(parser).view()));
-						
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1321,7 +1322,7 @@ layout: blank
 							===============================================================================
 							main.cpp(25):
 							TEST CASE:  ISO8601
-							
+
 							main.cpp(33): FATAL ERROR: REQUIRE( result.has_value() ) is NOT correct!
 							  values: REQUIRE( false )
 							  logged: Input could not be parsed.
@@ -1333,7 +1334,7 @@ layout: blank
 								Ignore<AllOf<"-">>,
 								Join<Exactly<AnyOf<"0123456789">,2>>
 							>
-							
+
 							===============================================================================
 							[...]
 						</script></code></pre>
@@ -1348,7 +1349,7 @@ layout: blank
 							===============================================================================
 							main.cpp(25):
 							TEST CASE:  ISO8601
-							
+
 							main.cpp(33): FATAL ERROR: REQUIRE( result.has_value() ) is NOT correct!
 							  values: REQUIRE( false )
 							  logged: Input could not be parsed.
@@ -1360,7 +1361,7 @@ layout: blank
 								Ignore<AllOf<"-">>,
 								Join<Exactly<AnyOf<"012345678">,2>>
 							>
-							
+
 							===============================================================================
 							[...]
 						</script></code></pre>
@@ -1382,7 +1383,7 @@ layout: blank
 							{
 								std::string_view input = "2024-01-01";
 								auto result = parser.parse(input);
-							
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1404,7 +1405,7 @@ layout: blank
 							{
 								std::string_view input = "bad";
 								auto result = parser.parse(input);
-						
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1432,7 +1433,7 @@ layout: blank
 
 								INFO(std::format("Input could not be parsed.\nInput = \"{}\"\n"
 									"Parser = {}", input, k3::tok3n::pretty(parser).view()));
-						
+
 								REQUIRE(result.has_value());
 								CHECK(*result == std::tuple("2024", "01", "01"));
 							}
@@ -1503,7 +1504,7 @@ layout: blank
 							{
 								std::string_view input = "2024-01-01";
 								auto result = parser.parse(input);
-						
+
 								expect(result.has_value()) << fatal;
 								expect(*result == std::tuple("2024", "01", "01"));
 							};
@@ -1522,7 +1523,7 @@ layout: blank
 							{
 								std::string_view input = "bad";
 								auto result = parser.parse(input);
-						
+
 								expect(result.has_value()) << fatal;
 								expect(*result == std::tuple("2024", "01", "01"));
 							};
@@ -1530,8 +1531,8 @@ layout: blank
 						<pre class="text fragment"><code data-trim><script type="text/template">
 							Running test "ISO8601"... FAILED
 							in: :0 - test condition:  [false]
-							
-							
+
+
 							===============================================================================
 							Suite globaltests:   1 | 2 failed
 							asserts: 2 | 0 passed | 2 failed
@@ -1547,7 +1548,7 @@ layout: blank
 							{
 								std::string_view input = "bad";
 								auto result = parser.parse(input);
-						
+
 								expect(result.has_value())
 									<< std::format("Input could not be parsed.\nInput = \"{}\"\n"
 									   "Parser = {}", input, k3::tok3n::pretty(parser).view())
@@ -1564,7 +1565,7 @@ layout: blank
 						<pre class="text"><code data-trim hide-line-numbers data-line-numbers><script type="text/template">
 							Running test "ISO8601"... FAILED
 							in: main.cpp:34 - test condition:  [false]
-							
+
 							 Input could not be parsed.
 							Input = "bad"
 							Parser = Sequence<
@@ -1587,7 +1588,7 @@ layout: blank
 						<pre class="text"><code data-trim hide-line-numbers data-line-numbers><script type="text/template">
 							Running test "ISO8601"... FAILED
 							in: main.cpp:34 - test condition:  [false]
-							
+
 							 Input could not be parsed.
 							Input = "2024-02-29"
 							Parser = Sequence<
@@ -1620,7 +1621,7 @@ layout: blank
 				</section>
 
 				<!-- #region Compile-time testing -->
-				
+
 				<section my-columns>
 					<h2>Compile-time testing</h2>
 					<div style="width:100%;">
@@ -1646,7 +1647,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns>
 					<h2>Compile-time testing</h2>
 					<div style="width:100%;">
@@ -1661,7 +1662,7 @@ layout: blank
 				</section>
 
 				<!-- #region Compile-time testing with GoogleTest -->
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with GoogleTest</h2>
 					<div style="width:100%;">
@@ -1683,7 +1684,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with GoogleTest</h2>
 					<div style="width:100%;">
@@ -1704,7 +1705,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns>
 					<h2>Compile-time testing with GoogleTest</h2>
 					<div style="width:100%;">
@@ -1717,7 +1718,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns>
 					<h2>Compile-time testing with GoogleTest</h2>
 					<div style="width:100%;">
@@ -1730,7 +1731,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns>
 					<h2>Compile-time testing with GoogleTest</h2>
 					<div style="width:100%;">
@@ -1752,7 +1753,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Compile-time testing with GoogleTest</h2>
 					<div style="width:100%;">
@@ -1771,7 +1772,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Compile-time testing with GoogleTest</h2>
 					<div style="width:100%;">
@@ -1797,7 +1798,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Compile-time testing with GoogleTest?</h2>
 					<div style="width:100%;">
@@ -1830,7 +1831,7 @@ layout: blank
 				<!-- #endregion Compile-time testing with GoogleTest -->
 
 				<!-- #region Compile-time testing with Boost.Test -->
-				
+
 				<section my-columns="80%">
 					<h2>Compile-time testing with Boost.Test</h2>
 					<div style="width:100%;">
@@ -1844,7 +1845,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Compile-time testing with Boost.Test</h2>
 					<div style="width:100%;">
@@ -1863,7 +1864,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Compile-time testing with Boost.Test</h2>
 					<div style="width:100%;">
@@ -1896,7 +1897,7 @@ layout: blank
 				<!-- #endregion Compile-time testing with Boost.Test -->
 
 				<!-- #region Compile-time testing with Catch2 -->
-				
+
 				<section my-columns="85%">
 					<h2>Compile-time testing with Catch2</h2>
 					<div style="width:100%;">
@@ -1920,7 +1921,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="85%">
 					<h2>Compile-time testing with Catch2</h2>
 					<div style="width:100%;">
@@ -1933,7 +1934,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="85%">
 					<h2>Compile-time testing with Catch2</h2>
 					<div style="width:100%;">
@@ -1950,7 +1951,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="95%">
 					<h2>Compile-time testing with Catch2</h2>
 					<div style="width:100%;">
@@ -1978,7 +1979,7 @@ layout: blank
 				<!-- #endregion Compile-time testing with Catch2 -->
 
 				<!-- #region Compile-time testing with doctest -->
-				
+
 				<section my-columns="85%">
 					<h2>Compile-time testing with doctest</h2>
 					<div style="width:100%;">
@@ -2006,7 +2007,7 @@ layout: blank
 				<!-- #endregion Compile-time testing with doctest -->
 
 				<!-- #region Compile-time testing with snitch -->
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2026,7 +2027,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2039,7 +2040,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2062,7 +2063,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2090,7 +2091,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2119,7 +2120,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2146,7 +2147,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2173,7 +2174,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with Catch2</h2>
 					<div style="width:100%;">
@@ -2198,7 +2199,7 @@ layout: blank
 						</div>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2225,7 +2226,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2252,7 +2253,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2277,7 +2278,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="100%">
 					<h2>Compile-time testing with snitch</h2>
 					<div style="width:100%;">
@@ -2309,7 +2310,7 @@ layout: blank
 				<!-- #endregion Compile-time testing with snitch -->
 
 				<!-- #region Compile-time testing with UT -->
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2326,7 +2327,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2339,7 +2340,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2361,7 +2362,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2374,18 +2375,18 @@ layout: blank
 						<pre class="text fragment"><code data-trim hide-line-numbers data-line-numbers><script type="text/template">
 							Running test "ISO8601 parsing"... FAILED
 							in: main.cpp:76 - test condition:  [false]
-							
+
 							Running test "ISO8601 parsing"... FAILED
 							in: main.cpp:76 - test condition:  [false]FAILED
 							in: main.cpp:76 - test condition:  [false]
-							
+
 							===============================================================================
 							Suite globaltests:   1 | 2 failed
 							asserts: 4 | 0 passed | 2 failed
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2402,7 +2403,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2431,7 +2432,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2439,11 +2440,11 @@ layout: blank
 						  #define EXPECT_CT_AND_RT_FATAL(COND, MESSAGE)     \
 						    expect(constant<(COND)>) << (MESSAGE) << fatal; \
 						    expect(COND) << (MESSAGE) << fatal
-												  
+
 						  #define EXPECT_CT_AND_RT_NONFATAL(COND) \
 						    expect(constant<(COND)>);             \
 						    expect(COND)
-												  
+
 						  #define ASSERT_PARSE_SUCCESS(P, INPUT, RESULT)                 \
 						    EXPECT_CT_AND_RT_FATAL(P::parse(INPUT).has_value(),          \
 						      std::format("Input could not be parsed.\nInput = \"{}\"\n" \
@@ -2454,7 +2455,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
@@ -2467,7 +2468,7 @@ layout: blank
 						<pre class="text fragment"><code data-trim hide-line-numbers data-line-numbers><script type="text/template">
 							Running test "ISO8601 parsing"... FAILED
 							in: main.cpp:103 - test condition:  [false]
-							
+
 							 Input could not be parsed.
 							Input = "bad"
 							Parser = Sequence<
@@ -2483,14 +2484,14 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="90%">
 					<h2>Compile-time testing with UT</h2>
 					<div style="width:100%;">
 						<pre class="text"><code data-trim hide-line-numbers data-line-numbers><script type="text/template">
 							Running test "ISO8601 parsing"... FAILED
 							in: main.cpp:103 - test condition:  [false]
-							
+
 							 Input could not be parsed.
 							Input = "2024-02-29"
 							Parser = Sequence<
@@ -2633,7 +2634,7 @@ layout: blank
 						</div>
 					</div>
 				</section>
-				
+
 				<!-- #region Intro -->
 
 				<section my-columns="42%">
@@ -2649,7 +2650,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="42%">
 					<h2>Mini testing library</h2>
 					<div style="width:100%;">
@@ -2662,7 +2663,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="42%">
 					<h2>Mini testing library</h2>
 					<div style="width:100%;">
@@ -2676,7 +2677,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="65%">
 					<h2>Mini testing library</h2>
 					<div style="width:100%;">
@@ -2694,13 +2695,13 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Simple test</h2>
 					<div style="width:100%;">
 						<pre class="cpp"><code data-trim hide-line-numbers data-line-numbers="1-4,20|7|9-10|11-12|13-14|9-14|16-17|18-19|16-19|"><script type="text/template">
 							FIXTURE("AnyOf");
-							
+
 							TEST("AnyOf", "Parse single 'a'")
 							{
 								using P = AnyOf<'a'>;
@@ -2722,7 +2723,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="20%">
 					<h2>Simple test</h2>
 					<div style="width:100%;">
@@ -2733,13 +2734,13 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-								
+
 				<section my-columns="80%">
 					<h2>Simple test</h2>
 					<div style="width:100%;">
 						<pre class="cpp"><code data-trim hide-line-numbers data-line-numbers="|9-12"><script type="text/template">
 							FIXTURE("AnyOf");
-							
+
 							TEST("AnyOf", "Parse single 'a'")
 							{
 								using P = AnyOf<'a'>;
@@ -2750,7 +2751,7 @@ layout: blank
 									R"(`AnyOf<'a'>::parse("Ab")` does not give a valid result)");
 								ASSERT(*(P::parse("Ab")) == "A",
 									R"(`*(AnyOf<'a'>::parse("Ab"))` does not equal `"A"`)");
-								
+
 								// ...
 							}
 						</script></code></pre>
@@ -2782,13 +2783,13 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Infeasable to write many of these</h2>
 					<div style="width:100%;">
 						<pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
 							FIXTURE("AnyOf");
-							
+
 							TEST("AnyOf", "Parse single 'a'")
 							{
 								using P = AnyOf<'a'>;
@@ -2810,13 +2811,13 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="80%">
 					<h2>Infeasable to write many of these</h2>
 					<div style="width:100%;">
 						<pre class="cpp"><code data-trim hide-line-numbers data-line-numbers=""><script type="text/template">
 							FIXTURE("AnyOf");
-							
+
 							TEST("AnyOf", "Parse single 'a'")
 							{
 								using P = AnyOf<'a'>;
@@ -2841,7 +2842,7 @@ layout: blank
 						</div>
 					</div>
 				</section>
-				
+
 				<!-- #endregion Intro -->
 
 				<!-- #region Parametrize -->
@@ -2862,7 +2863,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="55%">
 					<h2>Parametrize the testing</h2>
 					<div style="width:100%;">
@@ -2879,7 +2880,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="55%">
 					<h2>Parametrize the testing</h2>
 					<div style="width:100%;">
@@ -2895,7 +2896,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="55%">
 					<h2>Parametrize the testing</h2>
 					<div style="width:100%;">
@@ -2911,7 +2912,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="55%">
 					<h2>Parametrize the testing</h2>
 					<div style="width:100%;">
@@ -2927,7 +2928,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="82%">
 					<h2>Trouble with string literals</h2>
 					<div style="width:100%;">
@@ -2951,7 +2952,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<section my-columns="82%">
 					<h2>Trouble with string literals</h2>
 					<div style="width:100%;">
@@ -3010,7 +3011,7 @@ layout: blank
 						<div class="fragment">??</div>
 					</div>
 				</section>
-				
+
 				<!-- #endregion Parametrize -->
 
 				<!-- #region More macros -->
@@ -3047,9 +3048,9 @@ layout: blank
 							        "`" STR(L) " >> " STR(R) "` compiled but it should not");               \
 							    }                                                                           \
 							  }
-						
+
 							#define ALL_SAMPLES (AnyOf<"abc">) (AnyOf<"xyz">) (AnyOf<L"abc">) (AnyOf<L"xyz">)
-							
+
 							TEST("Combinable with sequence", "all samples")
 							{
 								ASSERT_ALL_SAMPLES_2(SEQUENCE_OPERATOR_ASSERTER);
@@ -3090,9 +3091,9 @@ layout: blank
 							        "`" STR(L) " >> " STR(R) "` compiled but it should not");               \
 							    }                                                                           \
 							  }
-						
+
 							#define ALL_SAMPLES (AnyOf<"abc">) (AnyOf<"xyz">) (AnyOf<L"abc">) (AnyOf<L"xyz">)
-							
+
 							TEST("Combinable with sequence", "all samples")
 							{
 								ASSERT_ALL_SAMPLES_2(SEQUENCE_OPERATOR_ASSERTER);
@@ -3118,9 +3119,9 @@ layout: blank
 							        "`" STR(L) " >> " STR(R) "` compiled but it should not");               \
 							    }                                                                           \
 							  }()
-						
+
 							#define ALL_SAMPLES (AnyOf<"abc">) (AnyOf<"xyz">) (AnyOf<L"abc">) (AnyOf<L"xyz">)
-							
+
 							TEST("Combinable with sequence", "all samples")
 							{
 								ASSERT_ALL_SAMPLES_2(SEQUENCE_OPERATOR_ASSERTER);
@@ -3159,7 +3160,7 @@ layout: blank
 					<iframe src="https://wg21.link/p2593" style="width:100%; height:100%">
 					</iframe>
 				</section>
-				
+
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
 						## `static_assert(false)`
@@ -3235,9 +3236,9 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<!-- #endregion C++23 static_assert(false) -->
-				
+
 				<!-- #region C++26 user-generated static_assert messages -->
 
 				<section my-columns="100%">
@@ -3245,7 +3246,7 @@ layout: blank
 					<iframe src="https://wg21.link/p2741" style="width:100%; height:100%">
 					</iframe>
 				</section>
-				
+
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
 						## User-generated `static_assert` messages
@@ -3268,7 +3269,7 @@ layout: blank
 
 								if constexpr (std::same_as<typename L::value_type, typename R::value_type>)
 								{
-									ASSERT((can_sequence<L, R>), 
+									ASSERT((can_sequence<L, R>),
 										std::format("`L >> R` did not compile\nL = {}\nR = {}",
 											pretty_L, pretty_R));
 								}
@@ -3309,7 +3310,7 @@ layout: blank
 						</script></code></pre>
 					</div>
 				</section>
-				
+
 				<!-- #endregion C++26 user-generated static_assert messages -->
 
 				<!-- #endregion Upcoming C++ features -->
@@ -3321,7 +3322,7 @@ layout: blank
 				<section signpost change-footer="Conclusion">
 					Conclusion
 				</section>
-				
+
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
 						## Summary
@@ -3333,7 +3334,7 @@ layout: blank
 						* If we want `static_assert` test cases, it'll be better in C++26
 					</textarea>
 				</section>
-				
+
 				<section data-markdown class="list-fade-in-then-semi-out">
 					<textarea data-template>
 						## Takeaways
@@ -3416,7 +3417,7 @@ layout: blank
 
 				controls: false,
 				progress: false,
-				
+
 				overview: true,
 
 				center: false,
