@@ -1,0 +1,216 @@
+---
+layout: blank
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Braden Ganetsky CppCon 2025</title>
+
+		<link rel="icon" href="../../!resources/images/^Profile Picture.png">
+
+		<link rel="stylesheet" href="../../!resources/dist/reset.css">
+		<link rel="stylesheet" href="../../!resources/dist/reveal.css">
+		<link rel="stylesheet" href="../../!resources/dist/theme/custom-white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../!resources/plugin/highlight/vs.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<!-- #region Intro -->
+
+				<section full data-background-image="./img/The Pattern Matching We Already Have_Title_Card copy.png" no-footer change-footer="Introduction">
+				</section>
+
+				<!-- <section full data-background-color="#FFFFFF" no-footer change-footer="Introduction">
+					<div style="display: flex; flex-flow: column; height: 100%;">
+
+						<div style="flex: 0 1 75%; display: flex; flex-flow: row;">
+							<div style="font-size:200%; display: flex; flex-flow: column; flex: 0 1 auto;">
+								<div style="flex: 1 1 auto;"></div>
+								<div                          >The Pattern Matching</div>
+								<div style="margin-top:-10px;">We Already Have</div>
+								<div style="flex: 1 1 auto;"></div>
+								<div style="flex: 0 1 0.5em;"></div>
+							</div>
+							<div style="flex: 50 1 auto;"></div>
+							<div style="display: flex; flex-flow: column; flex: 0 1 36%;">
+								<div style="flex: 1 1 auto;"></div>
+								<div style="display: flex; flex-flow: row; flex: 0 1 auto;">
+									<div style="flex: 1 1 auto;"></div>
+									<img src="../../!resources/images/^Profile Picture.png"></img>
+								</div>
+								<div style="flex: 3 1 auto;"></div>
+							</div>
+							<div style="flex: 1 1 auto;"></div>
+						</div>
+
+						<div style="flex: 1 1 auto; padding:1.8% 3% 2% 3%; background-color: #DDDDDD; display: flex; flex-flow: column;">
+							<div style="font-size:125%; ">Braden Ganetsky</div>
+							<div style="flex: 1 1 auto;"></div>
+							<div style="font-size:100%; ">CppCon 2025</div>
+						</div>
+
+					</div>
+				</section> -->
+
+				<include src="./regions/intro.html"></include>
+
+				<section data-markdown class="list-fade-in-then-semi-out">
+					<textarea data-template>
+						## About me
+						* Canadian
+						* Licensed professional engineer
+						* I like twisty puzzles
+						![test](../../!resources/images/NEP7570939.jpg) <!-- .element style="position:absolute; height:75%; right:0; top:12%;"-->
+						* Working in C++ for 4 years
+						* On WG21 since 2023
+						* Run Winnipeg C++ Developers
+					</textarea>
+				</section>
+
+				<!-- #endregion Intro -->
+
+
+
+				<section data-markdown signpost change-footer="Function overload resolution">
+					Function overload resolution
+				</section>
+
+				<include src="./regions/1-function-overload-resolution.html"></include>
+
+				<section data-markdown signpost change-footer="Template specializations">
+					Template specializations
+				</section>
+
+				<include src="./regions/2-template-specializations.html"></include>
+
+				<section data-markdown signpost change-footer="Template argument deduction">
+					Template argument deduction
+				</section>
+
+				<include src="./regions/3-template-argument-deduction.html"></include>
+
+				<section data-markdown signpost change-footer="Class template argument deduction">
+					Class template argument deduction
+				</section>
+
+				<include src="./regions/4-class-template-argument-deduction.html"></include>
+
+
+
+				<!-- #region Conclusion -->
+
+				<section signpost change-footer="Conclusion">
+					Conclusion
+				</section>
+
+				<section data-markdown class="list-fade-in-then-semi-out">
+					<textarea data-template>
+						## C++ has pattern matching!
+						* Function overload resolution
+						* Template specializations
+						* Template argument deduction
+						* Class template argument deduction
+					</textarea>
+				</section>
+
+				<section data-markdown class="list-fade-in-then-semi-out">
+					<textarea data-template>
+						## I read the standard so you don't have to
+						* [over.match]
+						* [temp.names], [temp.spec.partial], [temp.spec]
+						* [temp.deduct]
+						* [over.match.class.deduct], [dcl.type.class.deduct], [temp.deduct.guide]
+						* Cppreference is also an amazing resource
+					</textarea>
+				</section>
+
+				<section data-markdown class="list-fade-in-then-semi-out">
+					<textarea data-template>
+						## Takeaways
+						* We already have pattern matching!
+						* The general rules can be quite elegant
+						* ...but the edge cases can get gnarly
+						* Analogue reasoning about your code is a muscle
+						* Get curious, exercise that muscle
+						* Appreciate how far C++ has come
+					</textarea>
+				</section>
+
+				<!-- #endregion Conclusion -->
+
+
+
+				<include src="../../!resources/slides/thank-you/1.html"></include>
+			</div>
+		</div>
+
+		<script type="module">
+		import * as k3DW from "../../!resources/my-js.js";
+		const initObject = {
+			scripts : [
+				"../../!resources/dist/reveal.js",
+				"../../!resources/plugin/notes/notes.js",
+				"../../!resources/plugin/markdown/markdown.js",
+				"../../!resources/plugin/highlight/highlight.js",
+			],
+			width : 1280,
+			height : 720,
+			backgroundImage : "../../!resources/images/background/logo-with-binary-3840-2160.png",
+			leftSideFooter : "Pattern Matching",
+			rightSideFooter : "Braden Ganetsky - CppCon 2025",
+			useSubFooter : true,
+		};
+
+		(async () => {
+
+			await k3DW.preInitSlides(initObject);
+
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				slideNumber: true,
+				hash: true,
+
+				width: initObject.width,
+				height: initObject.height,
+
+				margin: 0.1,
+
+				controls: false,
+				progress: false,
+
+				overview: true,
+
+				center: false,
+
+				help: false,
+				pause: false,
+
+				transition: 'none',
+				backgroundTransition: 'none',
+
+				pdfSeparateFragments: false,
+
+				//autoAnimateDuration: 0,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+			Reveal.on("ready", () => {
+				k3DW.postInitSlides(initObject);
+			});
+
+		})();
+		</script>
+	</body>
+</html>

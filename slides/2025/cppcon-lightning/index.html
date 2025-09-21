@@ -1,0 +1,242 @@
+---
+layout: blank
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Braden Ganetsky CppCon 2025</title>
+
+        <link rel="icon" href="../../!resources/images/^Profile Picture.png">
+
+        <link rel="stylesheet" href="../../!resources/dist/reset.css">
+        <link rel="stylesheet" href="../../!resources/dist/reveal.css">
+        <link rel="stylesheet" href="../../!resources/dist/theme/custom-white.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="../../!resources/plugin/highlight/vs.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <!-- #region Intro -->
+
+                <section full data-background-color="#FFFFFF" no-footer change-footer="Introduction">
+                    <div style="display: flex; flex-flow: column; height: 100%;">
+
+                        <div style="flex: 0 1 75%; display: flex; flex-flow: row;">
+                            <div style="font-size:200%; display: flex; flex-flow: column; flex: 0 1 auto;">
+                                <div style="flex: 1 1 auto;"></div>
+                                <div                          >A Pack as an</div>
+                                <div style="margin-top:-10px;">Optional Parameter</div>
+                                <div style="flex: 1 1 auto;"></div>
+                                <div style="flex: 0 1 0.5em;"></div>
+                            </div>
+                            <div style="flex: 50 1 auto;"></div>
+                            <div style="display: flex; flex-flow: column; flex: 0 1 36%;">
+                                <div style="flex: 1 1 auto;"></div>
+                                <div style="display: flex; flex-flow: row; flex: 0 1 auto;">
+                                    <div style="flex: 1 1 auto;"></div>
+                                    <img src="../../!resources/images/^Profile Picture.png"></img>
+                                </div>
+                                <div style="flex: 3 1 auto;"></div>
+                            </div>
+                            <div style="flex: 1 1 auto;"></div>
+                        </div>
+
+                        <div style="flex: 1 1 auto; padding:1.8% 3% 2% 3%; background-color: #DDDDDD; display: flex; flex-flow: column;">
+                            <div style="font-size:125%; ">Braden Ganetsky</div>
+                            <div style="flex: 1 1 auto;"></div>
+                            <div style="font-size:100%; ">CppCon 2025 Lightning Talk</div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!--
+
+                    * Briefly show off tok3n
+                    * Zoom in on the parse, parse-into, and lookahead functionality
+
+                -->
+
+                <section data-markdown class="list-fade-in-then-semi-out">
+                    <textarea data-template>
+                        ## This talk
+                        * Fun with `operator++`
+                        * Introduce `tok3n`
+                        * How I use packs in `tok3n`
+                    </textarea>
+                </section>
+
+                <!-- #endregion Intro -->
+
+
+
+                <!-- #region Fun with `operator++` -->
+
+                <section signpost>
+                    Fun with <code>operator++</code>
+                </section>
+
+				<include src="./regions/increment-1-simple-counter.html"></include>
+				<include src="./regions/increment-2-harmonize.html"></include>
+				<include src="./regions/increment-3-unify.html"></include>
+
+                <!-- #endregion Fun with `operator++` -->
+
+
+
+                <!-- #region Introduce `tok3n` -->
+
+                <section signpost>
+                    Introduce <code>tok3n</code>
+                </section>
+
+                <section data-markdown class="list-fade-in-then-semi-out">
+                    <textarea data-template>
+                        ## `tok3n`
+                        * C++20 library
+                        * Expression template parser generators
+                        * Started writing in 2021
+                        * How I learned almost all the metaprogramming I know
+                        * All types are empty types (for now)
+                        * Fully `constexpr` capable
+                        * All unit tests are compile-time tests
+                    </textarea>
+                </section>
+
+				<include src="./regions/tok3n-1-basic.html"></include>
+				<include src="./regions/tok3n-2-combinators.html"></include>
+				<include src="./regions/tok3n-3-modify.html"></include>
+				<include src="./regions/tok3n-4-parser-functions.html"></include>
+
+                <!-- #endregion Introduce `tok3n` -->
+
+
+
+                <!-- #region How I use packs in `tok3n` -->
+
+                <section signpost>
+                    How I use packs in <code>tok3n</code>
+                </section>
+
+                <include src="./regions/packs-1.html"></include>
+                <include src="./regions/packs-2.html"></include>
+                <include src="./regions/packs-3.html"></include>
+
+                <section data-markdown class="list-fade-in-then-semi-out">
+                    <textarea data-template>
+                        ## Using the comma operator this way
+                        * I'm not saying you should do this
+                        * I'm just saying it's pretty cool
+                    </textarea>
+                </section>
+
+                <!-- #endregion How I use packs in `tok3n` -->
+
+
+
+                <!-- #region Thank you -->
+
+                <section full no-footer>
+                    <div style="display: flex; flex-flow: column; height: 100%;">
+                        <div style="flex: 0 1 auto; padding:1.8% 3% 2% 3%; background-color: #DDDDDD; display: flex; flex-flow: row;">
+                            <div style="flex: 1 1 auto;"></div>
+                            <div style="display: flex; flex-flow: column; flex: 0 1 auto;">
+                                <div style="font-size:300%; text-align: center;">Thank you!</div>
+                            </div>
+                            <div style="flex: 1 1 auto;"></div>
+                        </div>
+                        <div style="flex: 1 1 auto; display: flex; flex-flow: row;">
+                            <div style="flex: 1 1 auto;"></div>
+                            <div style="display: flex; flex-flow: column; flex: 0 1 auto;">
+                                <div style="flex: 1 1 auto;"></div>
+                                <div style="text-align: center; font-size: 150%;">
+                                    Braden Ganetsky
+                                </div>
+                                <br/>
+                                <div style="text-align: center;">
+                                    GitHub @k3DW
+                                </div>
+                                <div style="text-align: center;">
+                                    <a>https://github.com/k3DW/tok3n</a>
+                                </div>
+                                <div style="flex: 1 1 auto;"></div>
+                            </div>
+                            <div style="flex: 1 1 auto;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- #endregion Thank you -->
+
+            </div>
+        </div>
+
+        <script type="module">
+        import * as k3DW from "../../!resources/my-js.js";
+        const initObject = {
+            scripts : [
+                "../../!resources/dist/reveal.js",
+                "../../!resources/plugin/notes/notes.js",
+                "../../!resources/plugin/markdown/markdown.js",
+                "../../!resources/plugin/highlight/highlight.js",
+            ],
+            width : 1280,
+            height : 720,
+            backgroundImage : "../../!resources/images/background/logo-with-binary-3840-2160.png",
+            leftSideFooter : "A Pack as an Optional Parameter",
+            rightSideFooter : "Braden Ganetsky - CppCon 2025",
+            useSubFooter : false,
+        };
+
+        (async () => {
+
+            await k3DW.preInitSlides(initObject);
+
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                slideNumber: true,
+                hash: true,
+
+                width: initObject.width,
+                height: initObject.height,
+
+                margin: 0.1,
+
+                controls: false,
+                progress: false,
+
+                overview: true,
+
+                center: false,
+
+                help: false,
+                pause: false,
+
+                transition: 'none',
+                backgroundTransition: 'none',
+
+                pdfSeparateFragments: true,
+
+                //autoAnimateDuration: 0,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+
+            Reveal.on("ready", () => {
+                k3DW.postInitSlides(initObject);
+            });
+
+        })();
+        </script>
+    </body>
+</html>
