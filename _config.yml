@@ -47,12 +47,14 @@ footer:
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: linkedin
+  - logo: linkedin
     url: https://www.linkedin.com/in/braden-ganetsky/
-  - title: youtube
+  - logo: youtube
     url: https://www.youtube.com/@k3DW/
-  - title: github
+  - logo: github
     url: https://github.com/k3DW/
+  - icon: rss
+    url: https://blog.ganets.ky/
 
 # Credits content
 credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'

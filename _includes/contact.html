@@ -11,7 +11,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    
+
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <p>Email: <a style="color:
                         {% if site.section_contact.color-group contains 1 %}#ddd{% else %}#{{ site.color.primary }}{% endif %}
@@ -22,7 +22,7 @@
                         <ul class="list-inline">
                             {% for network in site.social %}
                             <li>
-                                <a href="{{ network.url }}" target="_blank" class="btn-social btn-outline"><i class="fab fa-{{ network.title }} fa-lg"></i></a>
+                                <a href="{{ network.url }}" target="_blank" class="btn-social btn-outline"><i class="{% if network.logo %}fab fa-{{ network.logo }}{% else %}fas fa-{{ network.icon }}{% endif %} fa-lg"></i></a>
                             </li>
 		                    {% endfor %}
                         </ul>
