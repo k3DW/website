@@ -14,7 +14,7 @@
                         <div class="modal-body">
                             <h2>{{ post.title }}</h2>
                             <hr class="graphic-color-group-2">
-                            <img src="img/speaking/{{ post.img }}-thumbnail.jpg" class="img-responsive img-centered" alt="{{ post.title }}">
+                            <img src="img/speaking/{{ post.img }}-thumbnail.jpg" loading="lazy" class="img-responsive img-centered" alt="{{ post.title }}">
                             {% if post.description %}
                                 <p>{{ post.description }}</p>
                             {% endif %}
